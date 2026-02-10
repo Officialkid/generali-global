@@ -196,7 +196,7 @@ function redirectToWhatsApp(formType, data) {
         showDebugInfo('Preparing WhatsApp message...', 'info');
 
         const message = generateQuoteMessage(data);
-        const whatsappNumber = '254702190131'; // Your WhatsApp number
+        const whatsappNumber = '254114995449'; // Your WhatsApp number
 
         // Encode the message for URL
         const encodedMessage = encodeURIComponent(message);

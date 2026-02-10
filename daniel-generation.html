@@ -73,20 +73,17 @@
             <div class="modal-card">
                 <button id="close-modal" class="modal-close" aria-label="Close registration">&times;</button>
                 <h2>Daniel Generation Registration</h2>
-                <form id="registration-form" action="https://formspree.io/f/yourFormID" method="POST">
+                <form id="registration-form">
                     <input type="text" name="name" id="reg-name" placeholder="Full Name" required>
                     <input type="tel" name="phone" id="reg-phone" placeholder="Phone Number" required pattern="[0-9+\- ]{7,}">
-                    <input type="email" name="email" id="reg-email" placeholder="Email Address" required>
-                    <div class="modal-consent">
-                        <span>By confirming, you consent to receive emails and information related to The Daniel Generation.</span>
-                    </div>
+                    <input type="email" name="email" id="reg-email" placeholder="Contact Email (Optional)">
+                    <label class="modal-checkbox" for="reg-fee">
+                        <input type="checkbox" id="reg-fee" name="fee" required>
+                        <span>I acknowledge I ought to pay KES 1,500 to join the platform.</span>
+                    </label>
+                    <p class="modal-note">After you submit, you will be redirected to WhatsApp. Please ensure you send the message to complete your registration.</p>
                     <button type="submit" id="reg-submit" class="nav-cta">Submit</button>
                 </form>
-                <div id="registration-success" class="registration-success">
-                    <div class="success-title">Your message was submitted successfully.</div>
-                    <div class="success-body">You will receive a WhatsApp message within 72 working hours after registration. In case of any issue, reach out to us on WhatsApp.</div>
-                    <a href="https://wa.me/254114995449" target="_blank" class="nav-cta">+254 114 995 449 <i class="fab fa-whatsapp"></i></a>
-                </div>
             </div>
         </div>
 

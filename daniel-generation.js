@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	const openBtns = document.querySelectorAll('.registration-trigger');
 	const modal = document.getElementById('registration-modal');
 	const closeBtn = document.getElementById('close-modal');
+	const registrationForm = document.getElementById('registration-form');
+	const nameInput = document.getElementById('reg-name');
+	const phoneInput = document.getElementById('reg-phone');
+	const emailInput = document.getElementById('reg-email');
 
 	function openModal() {
 		if (!modal) return;
@@ -22,6 +26,24 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (modal) {
 		modal.addEventListener('click', function (e) {
 			if (e.target === modal) closeModal();
+		});
+	}
+
+	if (registrationForm) {
+		registrationForm.addEventListener('submit', function (e) {
+			e.preventDefault();
+			const nameValue = nameInput ? nameInput.value.trim() : '';
+			const phoneValue = phoneInput ? phoneInput.value.trim() : '';
+			const emailValue = emailInput ? emailInput.value.trim() : '';
+			const details = [
+				`Name: ${nameValue || 'Not provided'}`,
+				`Phone: ${phoneValue || 'Not provided'}`,
+				`Email: ${emailValue || 'Not provided'}`,
+				'Acknowledgement: I acknowledge I ought to pay KES 1,500 to join the platform.'
+			].join('\n');
+			const message = `Hello Generali Global Group, I'd like to register myself to the Daniel Generation group. Here are my details:\n${details}`;
+			const whatsappUrl = `https://wa.me/254114995449?text=${encodeURIComponent(message)}`;
+			window.location.href = whatsappUrl;
 		});
 	}
 

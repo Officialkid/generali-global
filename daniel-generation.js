@@ -35,13 +35,16 @@ document.addEventListener('DOMContentLoaded', function () {
 			const nameValue = nameInput ? nameInput.value.trim() : '';
 			const phoneValue = phoneInput ? phoneInput.value.trim() : '';
 			const emailValue = emailInput ? emailInput.value.trim() : '';
-			const details = [
+			const message = [
+				'Hello Generali Global,',
+				"I'd like to register for The Daniel Generation. Here are my details:",
+				'',
 				`Name: ${nameValue || 'Not provided'}`,
 				`Phone: ${phoneValue || 'Not provided'}`,
 				`Email: ${emailValue || 'Not provided'}`,
-				'Acknowledgement: I acknowledge I ought to pay KES 1,500 to join the platform.'
+				'',
+				'Acknowledgement: I acknowledge I ought to pay KES 1,500 to join the platform. How do I pay?'
 			].join('\n');
-			const message = `Hello Generali Global Group, I'd like to register myself to the Daniel Generation group. Here are my details:\n${details}`;
 			const whatsappUrl = `https://wa.me/254114995449?text=${encodeURIComponent(message)}`;
 			window.location.href = whatsappUrl;
 		});

@@ -1,119 +1,174 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Daniel Generation - Generali Global</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>The Daniel Generation — Leadership School &amp; Virtual Mentorship Platform</title>
+    <meta name="description" content="The Daniel Generation Flagship Leadership School, led by Stephen Kago (Generali). Grounded in Daniel 5:14: Light, Understanding &amp; Wisdom.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css?v=20260831b">
     <link rel="stylesheet" href="booking.css">
     <link rel="stylesheet" href="daniel-generation.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body>
-    <nav class="navbar">
+    <!-- Top Glassmorphic Navigation -->
+    <nav class="navbar" id="navbar">
         <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="Generali Global Logo" style="height:32px; vertical-align:middle; margin-right:8px;">
-            <span class="logo-text" style="font-weight:700; font-size:1.2em; vertical-align:middle;">Generali Global</span>
+            <img src="images/logo.png" alt="The Daniel Generation Logo" class="nav-brand-logo">
+            <span class="logo-text">The Daniel Generation</span>
         </a>
         <div class="nav-links">
-            <div class="dropdown">
-                <a href="index.html#home" class="dropdown-toggle nav-cta"><i class="fas fa-home"></i> Home <i class="fas fa-caret-down" style="font-size:0.8em;"></i></a>
-                <div class="dropdown-menu">
-                    <a href="index.html#about"><i class="fas fa-user"></i> About</a>
-                    <a href="index.html#services"><i class="fas fa-cogs"></i> Services</a>
-                    <a href="index.html#events"><i class="fas fa-calendar-alt"></i> Event</a>
+            <a href="index.html">Home</a>
+            
+            <div class="nav-dropdown">
+                <a href="#ventures" class="dropdown-trigger active">Our Ventures <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-top: 1px;"></i></a>
+                <div class="dropdown-menu-box">
+                    <a href="institute.html" class="dropdown-item-link">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <span class="dropdown-item-title">Daniels Institute</span>
+                            <span class="dropdown-item-sub">Body Language &amp; Executive Intelligence</span>
+                        </div>
+                    </a>
+                    <a href="events.html" class="dropdown-item-link">
+                        <i class="fas fa-microphone-lines"></i>
+                        <div>
+                            <span class="dropdown-item-title">Generali Events</span>
+                            <span class="dropdown-item-sub">Luxury MC, Galas &amp; Event Hosting</span>
+                        </div>
+                    </a>
+                    <a href="daniel-generation.html" class="dropdown-item-link" style="background: var(--color-gold-transparent);">
+                        <i class="fas fa-crown"></i>
+                        <div>
+                            <span class="dropdown-item-title">The Daniel Generation</span>
+                            <span class="dropdown-item-sub">Leadership School &amp; Mentorship (Daniel 5:14)</span>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <a href="index.html#contact" class="nav-cta"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="daniel-generation.html" class="nav-cta"><i class="fas fa-star"></i> Daniel Generation</a>
-            <a href="booking.html" class="nav-cta"><i class="fas fa-file-alt"></i> Request Quote</a>
+
+            <a href="#who-we-are">The Mantle</a>
+            <a href="#benefits">7 Benefits</a>
+            <a href="booking.html" class="nav-cta-btn"><i class="fas fa-file-invoice-dollar"></i> Request Quote</a>
         </div>
-        <button class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
-    <!-- Mobile Menu -->
+
+    <!-- Mobile Drawer Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-header">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Generali Global Logo" style="height:28px; vertical-align:middle; margin-right:6px;">
-                <span class="logo-text" style="font-weight:700; font-size:1.1em; vertical-align:middle;">Generali Global</span>
+                <img src="images/logo.png" alt="The Daniel Generation Logo" class="nav-brand-logo">
+                <span class="logo-text">The Daniel Generation</span>
             </a>
             <button class="close-btn" id="close-btn">
                 <i class="fas fa-times"></i>
             </button>
         </div>
         <div class="mobile-links">
-            <div class="dropdown">
-                <a href="index.html#home" class="dropdown-toggle nav-cta"><i class="fas fa-home"></i> Home <i class="fas fa-caret-down" style="font-size:0.8em;"></i></a>
-                <div class="dropdown-menu">
-                    <a href="index.html#about"><i class="fas fa-user"></i> About</a>
-                    <a href="index.html#services"><i class="fas fa-cogs"></i> Services</a>
-                    <a href="index.html#events"><i class="fas fa-calendar-alt"></i> Event</a>
-                </div>
-            </div>
-            <a href="index.html#contact" class="nav-cta"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="daniel-generation.html" class="nav-cta"><i class="fas fa-star"></i> Daniel Generation</a>
-            <a href="booking.html" class="nav-cta"><i class="fas fa-file-alt"></i> Request Quote</a>
+            <a href="index.html"><i class="fas fa-home"></i> Parent Group Hub</a>
+            <a href="institute.html"><i class="fas fa-brain"></i> Daniels Institute</a>
+            <a href="events.html"><i class="fas fa-microphone-lines"></i> Generali Events</a>
+            <a href="daniel-generation.html" style="color: var(--color-gold-bright); font-weight: 700;"><i class="fas fa-crown"></i> The Daniel Generation School</a>
+            <a href="#who-we-are"><i class="fas fa-shield-alt"></i> The Daniel Mantle</a>
+            <a href="booking.html"><i class="fas fa-file-alt"></i> Request Quotation</a>
         </div>
     </div>
+
     <main>
+        <!-- Daniel Hero Section -->
         <section class="hero daniel-hero" id="home">
             <div class="hero-content">
-                <h1 class="hero-title static daniel-generation-title">The Daniel Generation</h1>
-                <p class="hero-tagline">A Generation of Light, Understanding, and Wisdom</p>
-                <button class="cta-button registration-trigger" type="button">Join the Generation</button>
+                <div class="hero-tagline-badge">
+                    <i class="fas fa-crown" style="color: var(--color-gold-bright);"></i>
+                    <span>Flagship Leadership &amp; Mentorship Academy</span>
+                </div>
+                <h1 class="hero-title static daniel-generation-title">The Daniel <span class="gold-gradient-text">Generation</span></h1>
+                <p class="hero-tagline">A Generation of Light, Understanding, and Excellent Wisdom</p>
+                <p style="max-width: 650px; margin-bottom: 1rem; color: var(--color-text-muted);">Founded &amp; Guided by <strong>Stephen Kago (Generali)</strong>. Raising wise men and women who govern systems, affect cultures, and dominate with practical &amp; spiritual wisdom.</p>
+                <button class="btn-primary registration-trigger" type="button">
+                    Join The Generation (KES 1,500) <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
         </section>
 
+        <!-- Registration Modal -->
         <div id="registration-modal" class="modal-overlay" aria-hidden="true">
-            <div class="modal-card">
+            <div class="modal-card luminous-card">
+                <div class="executive-accent"></div>
                 <button id="close-modal" class="modal-close" aria-label="Close registration">&times;</button>
-                <h2>Daniel Generation Registration</h2>
+                <div class="mono-tag" style="color: var(--color-gold-bright); margin-bottom: 6px;">Platform Enrollment</div>
+                <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-text-light);">Daniel Generation Registration</h2>
                 <form id="registration-form">
-                    <input type="text" name="name" id="reg-name" placeholder="Full Name" required>
-                    <input type="tel" name="phone" id="reg-phone" placeholder="Phone Number" required pattern="[0-9+\- ]{7,}">
-                    <input type="email" name="email" id="reg-email" placeholder="Contact Email (Optional)">
+                    <input type="text" name="name" id="reg-name" placeholder="Your Full Name" required>
+                    <input type="tel" name="phone" id="reg-phone" placeholder="WhatsApp Phone Number" required pattern="[0-9+\- ]{7,}">
+                    <input type="email" name="email" id="reg-email" placeholder="Email Address (Optional)">
+                    
                     <label class="modal-checkbox" for="reg-fee">
                         <input type="checkbox" id="reg-fee" name="fee" required>
                         <span>I acknowledge I ought to pay KES 1,500 to join the platform.</span>
                     </label>
-                    <p class="modal-note">After you submit, you will be redirected to WhatsApp. Please ensure you send the message to complete your registration.</p>
-                    <button type="submit" id="reg-submit" class="nav-cta">Submit</button>
+                    
+                    <p class="modal-note">After submission, you will be redirected to WhatsApp to confirm your cohort slot with Stephen Kago (Generali).</p>
+                    
+                    <button type="submit" id="reg-submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                        Complete via WhatsApp <i class="fab fa-whatsapp"></i>
+                    </button>
                 </form>
             </div>
         </div>
 
+        <!-- The Daniel Mantle Section -->
         <section class="about-section reveal" id="who-we-are">
-        <div class="section-container">
             <div class="section-header">
-                <h2>We Are <span style="color: var(--color-gold);">The Daniel Generation</span></h2>
-                <div class="divider"></div>
+                <div class="mono-tag" style="color: var(--color-gold-bright); margin-bottom: 8px;">The Biblical Mandate</div>
+                <h2>The Daniel <span class="gold-gradient-text">Mantle</span></h2>
+                <div class="holographic-divider"></div>
             </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/Generali-1.jpg" alt="The Daniel Generation">
+            <div class="founder-section-grid">
+                <div class="founder-main-image-container">
+                    <div class="executive-accent"></div>
+                    <img src="images/Generali-1.jpg" alt="The Daniel Generation Mantle" class="founder-main-image">
                 </div>
-                <div class="about-text">
-                    <h3>The Daniel Mantle</h3>
-                    <p>The Daniel Mantle is one of the greatest strategies for dominion in these last days.</p>
-                    <p>According to Daniel 5:14, there's a generation rising of people who have LIGHT, UNDERSTANDING, and excellent WISDOM. They will be conversant with almost all, in fact all, things that pertain to life... thus dominating.</p>
-                    <p>As a result, they will affect governments & kings, parliaments & palaces, and will influence systems & culture by these tripartite tools.</p>
-                    <p>The days of the wise have caught up with us.<br>The Daniel Tribe is gathering — THE DANIEL GENERATION.</p>
-                    <p><strong>Let the wise men and women arise!</strong></p>
+                <div class="founder-details-content">
+                    <div class="mono-tag" style="color: var(--color-gold-bright); margin-bottom: 6px;">Daniel 5:14 Principle</div>
+                    <h3 style="font-size: 2rem; margin-bottom: 1.2rem;">Dominion Through Tripartite Tools</h3>
+                    <p>The Daniel Mantle is one of the greatest strategies for dominion in this generation.</p>
+                    <p>According to <strong>Daniel 5:14</strong>, there is a generation rising of people who possess <strong>LIGHT</strong>, <strong>UNDERSTANDING</strong>, and <strong>EXCELLENT WISDOM</strong>. They are conversant with the principles that govern life, industry, and governance.</p>
+                    <p>As a result, they influence governments, parliaments, palaces, and systems of culture. The days of the wise have caught up with us—let the wise men and women arise!</p>
+                    
+                    <div class="founder-quote-box">
+                        <p>"The Daniel Tribe is gathering across continents. Wisdom answers all things, so you can never be stranded."</p>
+                    </div>
+
+                    <button class="btn-primary registration-trigger" style="margin-top: 1rem;">
+                        Enroll in Next Cohort <i class="fas fa-crown"></i>
+                    </button>
                 </div>
             </div>
-        </div>
         </section>
+
+        <!-- 7-Pillars Benefits Section -->
         <section class="benefits-section reveal" id="benefits">
-        <div class="section-container">
             <div class="section-header">
-                <h2 class="daniel-benefits-title">Benefits <span style="color: var(--color-gold);">of The Daniel Generation</span></h2>
-                <div class="divider"></div>
+                <div class="mono-tag" style="color: var(--color-gold-bright); margin-bottom: 8px;">Mentorship Dividends</div>
+                <h2>7 Core Benefits <span class="gold-gradient-text">of The Daniel Generation</span></h2>
+                <div class="holographic-divider"></div>
             </div>
+
             <div class="benefits-circle-slider">
                 <div class="benefits-circle" id="benefits-circle">
                     <div class="circle-icon" data-index="0" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%);">
@@ -138,210 +193,80 @@
                         <i class="fas fa-globe"></i>
                     </div>
                     <div class="circle-center">
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-crown"></i>
                     </div>
                 </div>
+
                 <div class="benefits-slider-wrapper">
                     <div class="benefits-slider">
-                        <div class="benefit-card active">
-                            <h3 class="hero-title"><i class="fas fa-lightbulb"></i> Benefit 1</h3>
-                            <p>You become the solution to all problems - Wisdom answers all things, so you can never be stranded.</p>
+                        <div class="benefit-card active glass-panel luminous-card" style="padding: 2.5rem;">
+                            <h3 class="hero-title" style="font-size: 1.8rem; color: var(--color-gold-bright); margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> 01. Solution to All Problems</h3>
+                            <p>You become an answer to complex dilemmas. Wisdom answers all things, ensuring you never face stagnation in your career or life mission.</p>
                         </div>
-                        <div class="benefit-card">
-                            <h3 class="hero-title"><i class="fas fa-bolt"></i> Benefit 2</h3>
-                            <p>You become a trendsetter - Because of the quality of Light you'll possess, you will always be ahead of your peers and generation.</p>
+                        <div class="benefit-card glass-panel luminous-card" style="padding: 2.5rem;">
+                            <h3 class="hero-title" style="font-size: 1.8rem; color: var(--color-gold-bright); margin-bottom: 1rem;"><i class="fas fa-bolt"></i> 02. Trendsetter &amp; Pioneer</h3>
+                            <p>Because of the quality of Light you possess, you operate ahead of your peers and set the pace in your industry and calling.</p>
                         </div>
-                        <div class="benefit-card">
-                            <h3 class="hero-title"><i class="fas fa-chess-king"></i> Benefit 3</h3>
-                            <p>Kings will seek for you and the palace becomes your natural abode - Nobles are always seeking solutions because they want to improve themselves daily so that they can grow stronger, thus becoming more powerful. And your wisdom will sort that out.</p>
+                        <div class="benefit-card glass-panel luminous-card" style="padding: 2.5rem;">
+                            <h3 class="hero-title" style="font-size: 1.8rem; color: var(--color-gold-bright); margin-bottom: 1rem;"><i class="fas fa-chess-king"></i> 03. Kings Seek Your Counsel</h3>
+                            <p>The palace becomes your natural abode. Leaders seek problem-solvers who carry rare insight and transformative clarity.</p>
                         </div>
-                        <div class="benefit-card">
-                            <h3 class="hero-title"><i class="fas fa-users"></i> Benefit 4</h3>
-                            <p>Your quality of network increases rapidly - If you are sorting out the problems of kings, then you have both their hearts and their pockets.</p>
+                        <div class="benefit-card glass-panel luminous-card" style="padding: 2.5rem;">
+                            <h3 class="hero-title" style="font-size: 1.8rem; color: var(--color-gold-bright); margin-bottom: 1rem;"><i class="fas fa-users"></i> 04. High-Level Strategic Network</h3>
+                            <p>Your relational capital multiplies rapidly as you connect with kings, executives, and influential minds globally.</p>
                         </div>
-                        <div class="benefit-card">
-                            <h3 class="hero-title"><i class="fas fa-coins"></i> Benefit 5</h3>
-                            <p>Your status changes to WEALTHY - Money doesn't follow passion, it follows problem-solving avenues. And because wisdom solves problems, wealth gravitates to wisdom. Hey billionaire!</p>
+                        <div class="benefit-card glass-panel luminous-card" style="padding: 2.5rem;">
+                            <h3 class="hero-title" style="font-size: 1.8rem; color: var(--color-gold-bright); margin-bottom: 1rem;"><i class="fas fa-coins"></i> 05. Wealth Gravitates to Wisdom</h3>
+                            <p>Money follows solutions. By mastering strategic wisdom, sustainable wealth naturally aligns with your capacity to add value.</p>
                         </div>
-                        <div class="benefit-card">
-                            <h3 class="hero-title"><i class="fas fa-smile"></i> Benefit 6</h3>
-                            <p>Life becomes generally easy - Wisdom's power is twofold; helps you to avoid problems. But in case you didn't, it gives you solutions on how to come out of them. Hence, it brings REST to your life.</p>
+                        <div class="benefit-card glass-panel luminous-card" style="padding: 2.5rem;">
+                            <h3 class="hero-title" style="font-size: 1.8rem; color: var(--color-gold-bright); margin-bottom: 1rem;"><i class="fas fa-smile"></i> 06. Rest &amp; Mastery</h3>
+                            <p>Wisdom prevents avoidable pitfalls and provides rapid navigation through adversity, delivering peace and purposeful rest.</p>
                         </div>
-                        <div class="benefit-card">
-                            <h3 class="hero-title"><i class="fas fa-globe"></i> Benefit 7</h3>
-                            <p>You become a global voice - Many people are average-minded. You can't be this loaded and still be in obscurity. <br>
-                                 SEE YOU AT THE TOP!</p>
+                        <div class="benefit-card glass-panel luminous-card" style="padding: 2.5rem;">
+                            <h3 class="hero-title" style="font-size: 1.8rem; color: var(--color-gold-bright); margin-bottom: 1rem;"><i class="fas fa-globe"></i> 07. A Respected Global Voice</h3>
+                            <p>Rise above obscurity. With light, understanding, and excellent wisdom, your voice influences nations and generations.</p>
                         </div>
                     </div>
-                    <div class="benefits-nav">
-                        <button id="benefit-prev" class="nav-cta">Previous</button>
-                        <button id="benefit-next" class="nav-cta">Next</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-        <section class="booking-section reveal" id="booking">
-        <div class="booking-content">
-            <div class="booking-image-container">
-                <img src="images/generali-cover-section.jpg" alt="Join Daniel Generation" class="booking-image">
-            </div>
-            <div class="booking-text">
-                <h2 class="booking-title">Want to be part of Daniel Generation?</h2>
-                <p class="booking-desc">Join a community of like-minded individuals who are passionate about making a difference. Sign up to stay updated and get involved!</p>
-                <button class="booking-cta registration-trigger">Join Now</button>
-            </div>
-        </div>
-    </section>
-
-        <section class="contact-section reveal" id="contact">
-        <div class="section-header">
-            <h2>Get In <span style="color: var(--color-gold);">Touch</span></h2>
-            <div class="divider"></div>
-        </div>
-        <div class="contact-card">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <!-- Phone -->
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-label">Phone</div>
-                            <div class="contact-value">
-                                <a href="tel:+254114995449">+254 114 995 449</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Email 1 -->
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-label">Email</div>
-                            <div class="contact-value">
-                                <a href="mailto:generaliglobal0@gmail.com">generaliglobal0@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Email 2 -->
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-label">Alternate Email</div>
-                            <div class="contact-value">
-                                <a href="mailto:brandgenerali254@gmail.com">brandgenerali254@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Social Media -->
-                <div class="social-media">
-                    <div class="social-title">Connect With Me</div>
-                    <div class="social-icons">
-                        <a href="https://x.com/Generali_Global?t=2GhEmxf6FgdoKnVptJJZ8g&s=09" target="_blank" class="social-icon twitter">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/generaliglobalevents?igsh=MW55cWdrZmRvdmNueg==" target="_blank" class="social-icon instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@generaliglobal.events?_t=ZM-8y6o3skskCs&_r=1" target="_blank" class="social-icon tiktok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/generali-global-90bb0b22b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-icon linkedin">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                    <div class="benefits-nav" style="display: flex; gap: 12px; justify-content: center; margin-top: 2rem;">
+                        <button id="benefit-prev" class="btn-secondary"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button id="benefit-next" class="btn-primary">Next <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
-        </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-    <div class="footer-container">
         <div class="footer-content">
-            <div class="footer-top">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="images/logo.png" alt="Generali Global Logo">
-                        <span class="logo-text">Generali Global</span>
-                    </div>
-                    <p>Generali Global is dedicated to empowering individuals and organizations through professional speaking, coaching, and transformative events.</p>
-                    <div class="footer-social-icons">
-                        <a href="https://x.com/Generali_Global?t=2GhEmxf6FgdoKnVptJJZ8g&s=09" class="social-icon twitter" target="_blank" rel="noopener" title="X">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/generaliglobalevents?igsh=MW55cWdrZmRvdmNueg==" class="social-icon instagram" target="_blank" rel="noopener" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@generaliglobal.events?_t=ZM-8y6o3skskCs&_r=1" class="social-icon tiktok" target="_blank" rel="noopener" title="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/generali-global-90bb0b22b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-icon linkedin" target="_blank" rel="noopener" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-links-col">
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#who-we-are"><i class="fas fa-chevron-right"></i> Who We Are</a></li>
-                        <li><a href="#benefits"><i class="fas fa-chevron-right"></i> Benefits</a></li>
-                        <li><a href="#booking"><i class="fas fa-chevron-right"></i> Join</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3 class="footer-heading">Contact Info</h3>
-                    <div class="footer-contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <a href="tel:+254114995449">+254 114 995 449</a>
-                        </div>
-                    </div>
-                    <div class="footer-contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <a href="mailto:generaliglobal0@gmail.com">generaliglobal0@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="footer-contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <a href="mailto:brandgenerali254@gmail.com">brandgenerali254@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Generali Global. All rights reserved.</p>
+                <p>&copy; 2026 The Daniel Generation Group. All rights reserved. Flagship Mentorship Platform led by Stephen Kago (Generali).</p>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-    <div class="floating-buttons">
-        <a href="https://wa.me/254114995449" target="_blank" rel="noopener noreferrer"
-            class="floating-btn whatsapp-btn pulse">
-            <i class="fab fa-whatsapp"></i>
-            <span class="tooltip">Chat on WhatsApp</span>
-        </a>
+    <!-- 3-in-1 Floating Action Dock -->
+    <div class="floating-action-dock">
+        <div class="dock-expansion-menu" id="dock-menu">
+            <a href="https://wa.me/254114995449?text=Hello%20Stephen%20Kago%20(Generali),%20I%20want%20to%20join%20The%20Daniel%20Generation%20Platform." target="_blank" class="dock-action-item">
+                <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.2rem;"></i> WhatsApp Stephen Kago
+            </a>
+            <a href="booking.html" class="dock-action-item">
+                <i class="fas fa-calculator" style="color: var(--color-gold-bright); font-size: 1.1rem;"></i> Instant Quotation Engine
+            </a>
+            <a href="index.html" class="dock-action-item">
+                <i class="fas fa-home" style="color: var(--color-gold-bright); font-size: 1.1rem;"></i> Parent Group Portal
+            </a>
+        </div>
+        <button class="dock-main-trigger" id="dock-toggle-btn" aria-label="Quick Action Menu">
+            <i class="fas fa-plus"></i>
+        </button>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="script.js?v=20260831b"></script>
     <script src="daniel-generation.js"></script>
 </body>
 </html>

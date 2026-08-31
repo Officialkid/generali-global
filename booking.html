@@ -1,185 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book With Generali</title>
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="booking.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Service Quotation &amp; Proposal Engine — The Daniel Generation</title>
+    <meta name="description" content="Generate a customized quotation for Generali Events, Daniels Institute of Body Language, or The Daniel Generation Leadership School.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css?v=20260831b">
+    <link rel="stylesheet" href="booking.css">
 </head>
 
 <body>
-    <!-- Debug Info Panel -->
-    <div class="debug-info" id="debugInfo"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Top Glassmorphic Navigation -->
+    <nav class="navbar" id="navbar">
         <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="Generali Global Logo" style="height:32px; vertical-align:middle; margin-right:8px;">
-            <span class="logo-text" style="font-weight:700; font-size:1.2em; vertical-align:middle;">Generali Global</span>
+            <img src="images/logo.png" alt="The Daniel Generation Logo" class="nav-brand-logo">
+            <span class="logo-text">The Daniel Generation</span>
         </a>
         <div class="nav-links">
-            <div class="dropdown">
-                <a href="index.html#home" class="dropdown-toggle nav-cta"><i class="fas fa-home"></i> Home <i class="fas fa-caret-down" style="font-size:0.8em;"></i></a>
-                <div class="dropdown-menu">
-                    <a href="index.html#about"><i class="fas fa-user"></i> About</a>
-                    <a href="index.html#services"><i class="fas fa-cogs"></i> Services</a>
-                    <a href="index.html#events"><i class="fas fa-calendar-alt"></i> Event</a>
+            <a href="index.html">Home</a>
+            
+            <div class="nav-dropdown">
+                <a href="#ventures" class="dropdown-trigger">Our Ventures <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-top: 1px;"></i></a>
+                <div class="dropdown-menu-box">
+                    <a href="institute.html" class="dropdown-item-link">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <span class="dropdown-item-title">Daniels Institute</span>
+                            <span class="dropdown-item-sub">Body Language &amp; Executive Intelligence</span>
+                        </div>
+                    </a>
+                    <a href="events.html" class="dropdown-item-link">
+                        <i class="fas fa-microphone-lines"></i>
+                        <div>
+                            <span class="dropdown-item-title">Generali Events</span>
+                            <span class="dropdown-item-sub">Luxury MC, Galas &amp; Event Hosting</span>
+                        </div>
+                    </a>
+                    <a href="daniel-generation.html" class="dropdown-item-link">
+                        <i class="fas fa-crown"></i>
+                        <div>
+                            <span class="dropdown-item-title">The Daniel Generation</span>
+                            <span class="dropdown-item-sub">Leadership School &amp; Mentorship</span>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <a href="index.html#contact" class="nav-cta"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="daniel-generation.html" class="nav-cta"><i class="fas fa-star"></i> Daniel Generation</a>
-            <a href="#" class="nav-cta"><i class="fas fa-file-alt"></i> Request Quote</a>
+
+            <a href="index.html#founder">Meet Stephen Kago</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="booking.html" class="nav-cta-btn active"><i class="fas fa-file-invoice-dollar"></i> Request Quote</a>
         </div>
-        <button class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
 
-    <!-- Mobile Menu -->
+    <!-- Mobile Drawer Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-header">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Generali Global Logo" style="height:28px; vertical-align:middle; margin-right:6px;">
-                <span class="logo-text" style="font-weight:700; font-size:1.1em; vertical-align:middle;">Generali Global</span>
+                <img src="images/logo.png" alt="The Daniel Generation Logo" class="nav-brand-logo">
+                <span class="logo-text">The Daniel Generation</span>
             </a>
             <button class="close-btn" id="close-btn">
                 <i class="fas fa-times"></i>
             </button>
         </div>
         <div class="mobile-links">
-            <div class="dropdown">
-                <a href="index.html#home" class="dropdown-toggle nav-cta"><i class="fas fa-home"></i> Home <i class="fas fa-caret-down" style="font-size:0.8em;"></i></a>
-                <div class="dropdown-menu">
-                    <a href="index.html#about"><i class="fas fa-user"></i> About</a>
-                    <a href="index.html#services"><i class="fas fa-cogs"></i> Services</a>
-                    <a href="index.html#events"><i class="fas fa-calendar-alt"></i> Event</a>
-                </div>
-            </div>
-            <a href="index.html#contact" class="nav-cta"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="daniel-generation.html" class="nav-cta"><i class="fas fa-star"></i> Daniel Generation</a>
-            <a href="#" class="nav-cta"><i class="fas fa-file-alt"></i> Request Quote</a>
+            <a href="index.html"><i class="fas fa-home"></i> Parent Group Hub</a>
+            <a href="institute.html"><i class="fas fa-brain"></i> Daniels Institute</a>
+            <a href="events.html"><i class="fas fa-microphone-lines"></i> Generali Events</a>
+            <a href="daniel-generation.html"><i class="fas fa-crown"></i> The Daniel Generation School</a>
+            <a href="booking.html" style="color: var(--color-gold-bright); font-weight: 700;"><i class="fas fa-file-alt"></i> Request Quotation</a>
         </div>
     </div>
 
-    <!-- Quote Hero Section -->
-    <section class="quote-hero">
-        <div class="quote-hero-content">
-            <h1>Request a Quote</h1>
-            <p>Get a customized quote for your event with Generali Global</p>
-        </div>
-    </section>
+    <!-- Main Quotation Canvas -->
+    <main class="booking-page-container">
+        <header class="booking-header">
+            <div class="mono-tag" style="color: var(--color-gold-bright); margin-bottom: 8px;">Executive Proposition Builder</div>
+            <h1 class="hero-title">Service <span class="gold-gradient-text">Quotation</span></h1>
+            <p>Design a bespoke engagement tailored to your executive requirements. Our automated engine prepares an instantaneous WhatsApp proposition.</p>
+            <div class="holographic-divider"></div>
+        </header>
 
-    <!-- Quote Form -->
-    <section class="quote-form-container">
-        <div class="quote-form" id="quote-form">
-            <div class="form-header">
-                <h2>Request for Quotation</h2>
-                <p>Provide some details about your event and we'll send you a customized quote via WhatsApp</p>
+        <form id="quote-builder-form">
+            <div class="booking-layout-grid">
+                <!-- Left Column: Form Steps -->
+                <div class="booking-form-steps">
+                    <!-- Step 1: Venture Selection -->
+                    <div class="form-section-card luminous-card">
+                        <div class="executive-accent"></div>
+                        <div class="form-section-title">
+                            <i class="fas fa-layer-group"></i> I. Select Venture Focus
+                        </div>
+                        <p style="font-size: 0.95rem; margin-bottom: 1rem;">Choose the specific subsidiary under The Daniel Generation Group:</p>
+                        
+                        <div class="venture-radio-grid">
+                            <!-- Venture 1 -->
+                            <label class="venture-radio-card active" id="card-events">
+                                <input type="radio" name="venture_focus" value="Generali Events" checked>
+                                <i class="fas fa-microphone-lines"></i>
+                                <div class="venture-card-title">Generali Events</div>
+                                <div class="venture-card-sub">Event MC, Luxury Weddings &amp; Corporate Galas</div>
+                            </label>
+
+                            <!-- Venture 2 -->
+                            <label class="venture-radio-card" id="card-institute">
+                                <input type="radio" name="venture_focus" value="Daniels Institute">
+                                <i class="fas fa-brain"></i>
+                                <div class="venture-card-title">Daniels Institute</div>
+                                <div class="venture-card-sub">Body Language &amp; Corporate Behavioral Training</div>
+                            </label>
+
+                            <!-- Venture 3 -->
+                            <label class="venture-radio-card" id="card-school">
+                                <input type="radio" name="venture_focus" value="The Daniel Generation">
+                                <i class="fas fa-crown"></i>
+                                <div class="venture-card-title">Leadership School</div>
+                                <div class="venture-card-sub">Virtual Mentorship &amp; Institutional Keynotes</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Client & Organization Details -->
+                    <div class="form-section-card luminous-card">
+                        <div class="executive-accent"></div>
+                        <div class="form-section-title">
+                            <i class="fas fa-id-card"></i> II. Client &amp; Organization Details
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="first_name">First Name *</label>
+                                <input type="text" id="first_name" name="first_name" required placeholder="e.g. David">
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name *</label>
+                                <input type="text" id="last_name" name="last_name" required placeholder="e.g. Mwangi">
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="email">Corporate / Personal Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="name@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">WhatsApp Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="e.g. +254 712 345 678">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organization / Entity Name (Optional)</label>
+                            <input type="text" id="organization" name="organization" placeholder="e.g. Apex Corporation or Private Family Event">
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Engagement Specifics -->
+                    <div class="form-section-card luminous-card">
+                        <div class="executive-accent"></div>
+                        <div class="form-section-title">
+                            <i class="fas fa-sliders-h"></i> III. Engagement Specifics
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="service_category">Service Category *</label>
+                                <select id="service_category" name="service_category" required>
+                                    <option value="Corporate Gala / Conference MC">Corporate Gala / Conference MC</option>
+                                    <option value="Luxury Wedding MC">Luxury Wedding MC</option>
+                                    <option value="Corporate Body Language Training">Corporate Body Language Training</option>
+                                    <option value="1-on-1 Executive Behavioral Coaching">1-on-1 Executive Behavioral Coaching</option>
+                                    <option value="The Daniel Generation School Mentorship">The Daniel Generation School Mentorship</option>
+                                    <option value="Institutional / School Keynote">Institutional / School Keynote</option>
+                                    <option value="Company Party / Team Building">Company Party / Team Building</option>
+                                    <option value="Other Bespoke Engagement">Other Bespoke Engagement</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="duration">Estimated Duration *</label>
+                                <select id="duration" name="duration" required>
+                                    <option value="1 to 2 Hours (Keynote / Short Session)">1 to 2 Hours (Keynote / Short Session)</option>
+                                    <option value="Half-Day (4 Hours)">Half-Day (4 Hours)</option>
+                                    <option value="Full-Day (8 Hours)">Full-Day (8 Hours)</option>
+                                    <option value="Multi-Day Summit / Retreat">Multi-Day Summit / Retreat</option>
+                                    <option value="Monthly Cohort Mentorship">Monthly Cohort Mentorship</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="audience_size">Estimated Audience Size</label>
+                                <select id="audience_size" name="audience_size">
+                                    <option value="Intimate (1 - 25 delegates)">Intimate (1 - 25 delegates)</option>
+                                    <option value="Medium (25 - 100 attendees)">Medium (25 - 100 attendees)</option>
+                                    <option value="Large (100 - 500 guests)">Large (100 - 500 guests)</option>
+                                    <option value="Auditorium (500+ attendees)">Auditorium (500+ attendees)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="event_date">Target Date / Timeline</label>
+                                <input type="text" id="event_date" name="event_date" placeholder="e.g. October 2026 or Flexible">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Special Requirements / Event Goals</label>
+                            <textarea id="notes" name="notes" rows="3" placeholder="Briefly describe your objectives, venue location, or key focus areas..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Sticky Real-Time Proposal Preview -->
+                <div class="booking-summary-col">
+                    <div class="quote-summary-card">
+                        <div class="executive-accent"></div>
+                        <div class="summary-header">
+                            <div class="mono-tag" style="color: var(--color-gold-bright); margin-bottom: 4px;">Proposition Summary</div>
+                            <h3 style="font-size: 1.4rem; color: var(--color-text-light);">Instant Quotation</h3>
+                        </div>
+
+                        <div class="summary-details-list">
+                            <div class="summary-item">
+                                <span class="summary-label">Venture:</span>
+                                <span class="summary-value" id="summary-venture">Generali Events</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Category:</span>
+                                <span class="summary-value" id="summary-category">Corporate Gala MC</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Duration:</span>
+                                <span class="summary-value" id="summary-duration">1 to 2 Hours</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Client Name:</span>
+                                <span class="summary-value" id="summary-client">Pending Entry</span>
+                            </div>
+                        </div>
+
+                        <div class="holographic-divider" style="margin: 1.5rem 0;"></div>
+
+                        <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">Clicking below will format a comprehensive, pre-filled proposal directly into WhatsApp for Stephen Kago (Generali).</p>
+
+                        <button type="submit" class="whatsapp-dispatch-btn" id="dispatch-btn">
+                            <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Generate &amp; Send Proposal
+                        </button>
+                    </div>
+                </div>
             </div>
+        </form>
+    </main>
 
-            <form id="quoteForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="quoteFirstName">First Name *</label>
-                        <input type="text" id="quoteFirstName" name="quoteFirstName" required>
-                        <div class="validation-error" id="quoteFirstNameError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="quoteLastName">Last Name *</label>
-                        <input type="text" id="quoteLastName" name="quoteLastName" required>
-                        <div class="validation-error" id="quoteLastNameError"></div>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="quoteEmail">Email *</label>
-                        <input type="email" id="quoteEmail" name="quoteEmail" required>
-                        <div class="validation-error" id="quoteEmailError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="quotePhone">Phone *</label>
-                        <input type="tel" id="quotePhone" name="quotePhone" required
-                            placeholder="e.g., 0712345678 or 254712345678">
-                        <div class="validation-error" id="quotePhoneError"></div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="quoteEventType">Event Type *</label>
-                    <select id="quoteEventType" name="quoteEventType" required>
-                        <option value="">Select Event Type</option>
-                        <option value="Corporate Events">Corporate Events</option>
-                        <option value="Wedding Events">Wedding Events</option>
-                        <option value="Graduation Parties">Graduation Parties</option>
-                        <option value="Company Parties & Fun Days">Company Parties & Fun Days</option>
-                        <option value="Birthday Parties">Birthday Parties</option>
-                        <option value="School Events">School Events</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <div class="validation-error" id="quoteEventTypeError"></div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="quoteEventDuration">Event Duration *</label>
-                        <select id="quoteEventDuration" name="quoteEventDuration" required>
-                            <option value="">Select Duration</option>
-                            <option value="1 hour">1 hour</option>
-                            <option value="2 hours">2 hours</option>
-                            <option value="3 hours">3 hours</option>
-                            <option value="Half day (4 hours)">Half day (4 hours)</option>
-                            <option value="Full day (8 hours)">Full day (8 hours)</option>
-                        </select>
-                        <div class="validation-error" id="quoteEventDurationError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="quoteNumberOfSessions">Number of Sessions</label>
-                        <select id="quoteNumberOfSessions" name="quoteNumberOfSessions">
-                            <option value="1">1 session</option>
-                            <option value="2">2 sessions</option>
-                            <option value="3">3 sessions</option>
-                            <option value="4+">4+ sessions</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="eventDetails">Additional Details (Optional)</label>
-                    <textarea id="eventDetails" name="eventDetails"
-                        placeholder="Any other information about your event that might be helpful for our quotation"></textarea>
-                    <div class="optional-note">How would you want your Event to be</div>
-                </div>
-
-                <button type="submit" class="submit-btn" id="quoteSubmitBtn">Request Quote via WhatsApp</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Success Message -->
-    <div class="quote-form-container" id="success-message-container" style="display: none;">
-        <div class="quote-form">
-            <div class="success-message">
-                <i class="fas fa-check-circle"></i>
-                <h3>Thank You!</h3>
-                <p id="success-message-text">Your quote request has been prepared. You will be redirected to WhatsApp in
-                    a
-                    moment to send your request and receive your customized quote.</p>
-                <div class="countdown" id="countdown">Redirecting in 3 seconds...</div>
-                <button class="submit-btn" onclick="location.reload()">Request Another Quote</button>
-            </div>
-        </div>
-    </div>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Generali Global. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Daniel Generation Group. All rights reserved. Founded &amp; Led by Stephen Kago (Generali).</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- 3-in-1 Floating Action Dock -->
+    <div class="floating-action-dock">
+        <div class="dock-expansion-menu" id="dock-menu">
+            <a href="https://wa.me/254114995449?text=Hello%20Stephen%20Kago%20(Generali),%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="dock-action-item">
+                <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.2rem;"></i> WhatsApp Stephen Kago
+            </a>
+            <a href="index.html" class="dock-action-item">
+                <i class="fas fa-home" style="color: var(--color-gold-bright); font-size: 1.1rem;"></i> Parent Group Portal
+            </a>
+        </div>
+        <button class="dock-main-trigger" id="dock-toggle-btn" aria-label="Quick Action Menu">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js?v=20260831b"></script>
     <script src="booking.js"></script>
 </body>
-
 </html>

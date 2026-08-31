@@ -1,203 +1,159 @@
-/* Daniel Generation page overrides */
-.daniel-hero {
-    min-height: 100vh;
-    padding: 80px 5% 0;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark-1) 100%);
-}
+/* ==========================================================================
+   THE DANIEL GENERATION LEADERSHIP SCHOOL — SPECIFIC STYLES
+   ========================================================================== */
 
-.daniel-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/images/generali-home.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    filter: blur(15px) brightness(0.4);
-    z-index: 0;
+.daniel-hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 5% 3rem;
 }
 
 .daniel-hero .hero-content {
-    position: relative;
-    z-index: 1;
-    width: min(90%, 900px);
+    max-width: 850px;
     margin: 0 auto;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 70vh;
-    gap: 18px;
 }
 
-.hero-title.static {
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 0;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
-    width: auto;
-    border-right: none;
-    animation: none;
-    white-space: normal;
+.daniel-generation-title {
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    margin-bottom: 1rem;
 }
 
 .hero-tagline {
-    font-size: clamp(1.1rem, 2.6vw, 2rem);
-    color: var(--color-gold-light);
+    font-size: 1.4rem;
+    color: var(--color-gold-bright);
+    margin-bottom: 1.5rem;
     font-weight: 600;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.daniel-benefits-title {
-    font-size: clamp(1.7rem, 3.6vw, 2.5rem);
-}
-
-
+/* Modal Overlay */
 .modal-overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
     z-index: 9999;
     align-items: center;
     justify-content: center;
+    padding: 1.5rem;
 }
 
 .modal-card {
-    background: var(--color-card-bg);
-    border-radius: 18px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
-    padding: 2.5rem 1.6rem;
-    max-width: 420px;
-    width: 90vw;
-    text-align: center;
-    animation: fadeInModal 0.35s ease;
+    background: var(--color-dark-1);
+    border: 1px solid var(--color-hairline-bright);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.2rem;
+    max-width: 460px;
+    width: 100%;
     position: relative;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
+    animation: fadeInModal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.modal-card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.2rem;
+@keyframes fadeInModal {
+    from { opacity: 0; transform: scale(0.92) translateY(15px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .modal-close {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 18px;
+    right: 18px;
     background: none;
     border: none;
-    font-size: 1.5rem;
-    color: var(--color-gold);
+    color: var(--color-gold-bright);
+    font-size: 1.6rem;
     cursor: pointer;
 }
 
-.modal-card form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
+.modal-card input[type="text"],
+.modal-card input[type="tel"],
+.modal-card input[type="email"] {
+    background: rgba(8, 8, 8, 0.8);
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--radius-sm);
+    color: #FFFFFF;
+    padding: 12px 16px;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
 }
 
-.modal-card input {
-    padding: 0.75rem 0.9rem;
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-    background: var(--color-dark-2);
-    color: var(--color-text-light);
+.modal-card input:focus {
+    outline: none;
+    border-color: var(--color-gold-bright);
+    box-shadow: 0 0 15px rgba(249, 192, 61, 0.3);
 }
 
 .modal-checkbox {
     display: flex;
     align-items: flex-start;
-    gap: 0.7rem;
-    background: var(--color-dark-2);
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-    padding: 0.9rem;
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
+    gap: 10px;
     text-align: left;
+    font-size: 0.88rem;
+    color: var(--color-gold-bright);
+    margin: 1.2rem 0;
+    cursor: pointer;
 }
 
 .modal-checkbox input {
-    margin-top: 0.2rem;
-    accent-color: var(--color-gold);
+    margin-top: 4px;
+    accent-color: var(--color-gold-light);
 }
 
 .modal-note {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--color-text-light);
+    font-size: 0.82rem;
+    color: var(--color-text-dim);
+    margin-bottom: 1.2rem;
     text-align: left;
 }
 
-@keyframes fadeInModal {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-.benefits-section {
-    background: var(--color-dark-2);
-    padding: 100px 5% 60px;
-    position: relative;
-    overflow: hidden;
-}
-
-.benefits-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 35%;
-    height: 100%;
-    background: linear-gradient(to left, transparent 0%, var(--color-gold-transparent) 100%);
-    opacity: 0.15;
-    z-index: 0;
-}
-
-.benefits-section .section-container {
-    position: relative;
-    z-index: 1;
-}
-
+/* Benefits 7-Pillar Circle Slider */
 .benefits-circle-slider {
     display: grid;
-    grid-template-columns: minmax(220px, 340px) 1fr;
+    grid-template-columns: 380px 1fr;
+    gap: 4rem;
     align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
-    min-height: 400px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .benefits-circle {
-    position: relative;
-    width: 340px;
-    height: 340px;
-    margin: 0 auto;
+    width: 360px;
+    height: 360px;
     border-radius: 50%;
-    border: 2px solid var(--color-gold-transparent);
+    border: 2px dashed var(--color-hairline-bright);
+    position: relative;
+    margin: 0 auto;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .circle-icon {
-    background: var(--color-card-bg);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    padding: 0.7rem;
+    background: var(--color-dark-2);
+    border: 1px solid var(--color-hairline-bright);
+    color: var(--color-gold-bright);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: box-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .circle-icon:hover {
-    transform: translateY(-2px);
+    transform: scale(1.2);
+    background: var(--color-gold-light);
+    color: #000;
 }
 
 .circle-center {
@@ -205,156 +161,43 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: var(--color-gold-transparent);
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    padding: 1.2rem;
+    background: linear-gradient(135deg, var(--color-gold-bright), var(--color-gold));
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 0 35px rgba(249, 192, 61, 0.4);
 }
 
 .benefits-slider-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.benefits-slider {
-    width: 100%;
-    max-width: 520px;
-    min-height: 220px;
     position: relative;
 }
 
 .benefit-card {
-    background: var(--color-card-bg);
-    border-radius: 18px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    padding: 2rem 1.4rem;
-    text-align: center;
-    position: absolute;
-    inset: 0;
-    margin: auto;
     display: none;
-    opacity: 0;
-    transition: opacity 0.5s;
 }
 
 .benefit-card.active {
     display: block;
-    opacity: 1;
+    animation: fadeInBenefit 0.4s ease;
 }
 
-.benefit-card h3.hero-title {
-    font-size: 1.35rem;
-    margin-bottom: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-    width: auto;
-    border-right: none;
-    animation: none;
-    white-space: normal;
-}
-
-.benefit-card h3 i {
-    font-size: 2rem;
-    color: var(--color-gold-light);
-}
-
-.benefit-card p {
-    font-size: 1.05rem;
-    color: var(--color-text);
-}
-
-.benefits-nav {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.benefits-circle-slider.is-mobile {
-    display: block;
-    min-height: unset;
-}
-
-.benefits-circle-slider.is-mobile .benefits-circle {
-    display: none;
-}
-
-.benefits-circle-slider.is-mobile .benefits-slider {
-    position: static;
-    max-width: 95vw;
-    min-height: unset;
-}
-
-.benefits-circle-slider.is-mobile .benefit-card {
-    position: relative;
-    display: block;
-    opacity: 1;
-    margin: 12px auto;
-    max-width: 420px;
-    width: 92vw;
-    text-align: left;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.benefits-circle-slider.is-mobile .benefit-card h3.hero-title {
-    align-items: flex-start;
-    text-align: left;
-    position: relative;
-    padding-bottom: 0.7rem;
-    margin-bottom: 0.7rem;
-}
-
-.benefits-circle-slider.is-mobile .benefit-card h3.hero-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: var(--color-gold);
-}
-
-.benefits-circle-slider.is-mobile .benefit-card h3.hero-title i {
-    font-size: 1.5rem;
-}
-
-.benefits-circle-slider.is-mobile .benefit-card p {
-    color: var(--color-text-muted);
-    text-align: left;
-}
-
-.benefits-circle-slider.is-mobile .benefits-nav {
-    display: none;
+@keyframes fadeInBenefit {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 900px) {
     .benefits-circle-slider {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
-
     .benefits-circle {
-        width: 240px;
-        height: 240px;
-        margin-bottom: 1.6rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .daniel-generation-title {
-        font-size: 2.1rem;
-    }
-
-    .daniel-benefits-title {
-        font-size: 1.5rem;
-    }
-
-    .hero-tagline {
-        font-size: 1.1rem;
+        width: 290px;
+        height: 290px;
     }
 }

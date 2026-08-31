@@ -1,191 +1,189 @@
-// Mobile Menu Toggle
-const hamburger = document.getElementById('hamburger');
-const closeBtn = document.getElementById('close-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-const body = document.body;
+/* ==========================================================================
+   THE DANIEL GENERATION — INTERACTIVE SCRIPTS
+   ========================================================================== */
 
-hamburger.addEventListener('click', () => {
-    mobileMenu.classList.add('active');
-    body.style.overflow = 'hidden';
-});
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-btn');
 
-closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    body.style.overflow = '';
-});
-
-// Close menu when clicking on links
-document.querySelectorAll('.mobile-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        body.style.overflow = '';
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Daniels Generation Navbar Dropdown (Desktop & Mobile)
-    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-        toggle.addEventListener('click', function(e) {
-            // Only toggle on mobile (or if explicitly clicked)
-            if (window.innerWidth <= 900) {
-                e.preventDefault();
-                const parent = this.parentElement;
-                const menu = parent.querySelector('.dropdown-menu');
-                if (menu) {
-                    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-                }
-            }
+    if (hamburger && mobileMenu && closeBtn) {
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
         });
-    });
-    // Close dropdowns when clicking outside (mobile)
-    document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 900) {
-            document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
-                if (!menu.contains(e.target) && !menu.parentElement.contains(e.target)) {
-                    menu.style.display = 'none';
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        document.querySelectorAll('.mobile-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // 2. Dropdown Persistence for Touch & Click
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(dropdown => {
+        const trigger = dropdown.querySelector('.dropdown-trigger');
+        if (trigger) {
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth > 820) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
                 }
             });
         }
     });
 
-    // Role Rotation Animation (only if roles exist)
-    const roles = document.querySelectorAll('.role');
-    if (roles.length > 0) {
-        let currentRoleIndex = 0;
-        function showNextRole() {
-            roles[currentRoleIndex].classList.remove('active');
-            currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-            roles[currentRoleIndex].classList.add('active');
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            dropdowns.forEach(d => d.classList.remove('active'));
         }
-        // Start role rotation after all animations complete
-        setTimeout(() => {
-            roles[0].classList.add('active');
-            setInterval(showNextRole, 3000);
-        }, 3500);
-    }
-
-    // Smooth scrolling for same-page anchors only
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (!href || href.length <= 1) {
-                return;
-            }
-            const target = document.querySelector(href);
-            if (!target) {
-                return;
-            }
-            e.preventDefault();
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
     });
 
-    // Services Carousel Functionality
-    const carousel = document.getElementById('services-carousel');
-    const prevBtn = document.getElementById('carousel-prev');
-    const nextBtn = document.getElementById('carousel-next');
-    let currentPosition = 0;
-    const isMobile = window.innerWidth <= 992;
-
-    if (carousel && prevBtn && nextBtn && !isMobile) {
-        const cardWidth = document.querySelector('.service-card').offsetWidth + 30;
-        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-
-        nextBtn.addEventListener('click', () => {
-            currentPosition = Math.min(currentPosition + cardWidth, maxScroll);
-            carousel.scrollTo({
-                left: currentPosition,
-                behavior: 'smooth'
-            });
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentPosition = Math.max(currentPosition - cardWidth, 0);
-            carousel.scrollTo({
-                left: currentPosition,
-                behavior: 'smooth'
-            });
-        });
-    }
-
-    // Highlight current nav link on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a, .mobile-links a');
-
-    function highlightNavLink() {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 100)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', highlightNavLink);
-    highlightNavLink(); // Initial call
-
-    // Scroll reveal animation
+    // 3. Scroll Reveal Observer
     const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
 
-    function checkReveal() {
-        revealElements.forEach(element => {
-            const windowHeight = window.innerHeight;
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
+    revealElements.forEach(el => revealObserver.observe(el));
 
-            if (elementTop < windowHeight - elementVisible) {
-                element.classList.add('visible');
+    // 5. 3D Parallax Tilt Effect
+    const tiltContainers = document.querySelectorAll('.tilt-card-container');
+    tiltContainers.forEach(container => {
+        const card = container.querySelector('.tilt-card');
+        if (!card) return;
+
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -9;
+            const rotateY = ((x - centerX) / centerX) * 9;
+
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+    });
+
+    // 6. Interactive Services Carousel Sliding
+    const carouselTrack = document.getElementById('services-carousel-track');
+    const prevArrow = document.getElementById('services-carousel-prev');
+    const nextArrow = document.getElementById('services-carousel-next');
+
+    if (carouselTrack && prevArrow && nextArrow) {
+        nextArrow.addEventListener('click', () => {
+            const card = carouselTrack.querySelector('.service-interactive-card');
+            const cardWidth = card ? card.offsetWidth + 24 : 340;
+            carouselTrack.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+
+        prevArrow.addEventListener('click', () => {
+            const card = carouselTrack.querySelector('.service-interactive-card');
+            const cardWidth = card ? card.offsetWidth + 24 : 340;
+            carouselTrack.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+    }
+
+    // 7. Testimonials Filter Navigation
+    const filterButtons = document.querySelectorAll('.test-filter-btn');
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+            testimonialCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // 8. 3-in-1 Floating Action Dock
+    const dockTrigger = document.getElementById('dock-toggle-btn');
+    const dockMenu = document.getElementById('dock-menu');
+
+    if (dockTrigger && dockMenu) {
+        dockTrigger.addEventListener('click', () => {
+            if (dockMenu.style.display === 'flex') {
+                dockMenu.style.display = 'none';
+                dockTrigger.innerHTML = '<i class="fas fa-plus"></i>';
+            } else {
+                dockMenu.style.display = 'flex';
+                dockTrigger.innerHTML = '<i class="fas fa-times"></i>';
             }
         });
     }
 
-    window.addEventListener('scroll', checkReveal);
-    checkReveal(); // Initial check
-});
+        // 9. Internal Video Highlight Reel Modal
+    const openVideoBtn = document.getElementById('open-video-btn');
+    const videoModal = document.getElementById('video-modal');
+    const closeVideoBtn = document.getElementById('close-video-btn');
+    const internalVideo = document.getElementById('internal-reel-video');
 
-// Toggle Event Descriptions
-function toggleDescription(shortId, fullId, button) {
-    const shortDesc = document.getElementById(shortId);
-    const fullDesc = document.getElementById(fullId);
+    if (openVideoBtn && videoModal && closeVideoBtn) {
+        openVideoBtn.addEventListener('click', () => {
+            videoModal.style.display = 'flex';
+            if (internalVideo) {
+                internalVideo.currentTime = 0;
+                internalVideo.play().catch(e => console.log('Autoplay handled:', e));
+            }
+        });
 
-    if (fullDesc.style.display === 'none') {
-        shortDesc.style.display = 'none';
-        fullDesc.style.display = 'block';
-        button.innerHTML = 'Read less <i class="fas fa-arrow-up"></i>';
-    } else {
-        shortDesc.style.display = 'block';
-        fullDesc.style.display = 'none';
-        button.innerHTML = 'Read more <i class="fas fa-arrow-right"></i>';
+        const stopVideo = () => {
+            videoModal.style.display = 'none';
+            if (internalVideo) {
+                internalVideo.pause();
+            }
+        };
+
+        closeVideoBtn.addEventListener('click', stopVideo);
+
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                stopVideo();
+            }
+        });
     }
-}
 
-// Make contact items clickable
-document.querySelectorAll('.contact-item, .footer-contact-item').forEach(item => {
-    item.addEventListener('click', function () {
-        const link = this.querySelector('a');
-        if (link) {
-            window.open(link.href, '_blank');
-        }
-    });
+    // 10. Executive Capability Deck Modal
+    const openDeckBtn = document.getElementById('open-deck-btn');
+    const deckModal = document.getElementById('deck-modal');
+    const closeDeckBtn = document.getElementById('close-deck-btn');
+
+    if (openDeckBtn && deckModal && closeDeckBtn) {
+        openDeckBtn.addEventListener('click', () => {
+            deckModal.style.display = 'flex';
+        });
+
+        closeDeckBtn.addEventListener('click', () => {
+            deckModal.style.display = 'none';
+        });
+
+        deckModal.addEventListener('click', (e) => {
+            if (e.target === deckModal) {
+                deckModal.style.display = 'none';
+            }
+        });
+    }
 });
-
-// Remove pulse animation after first interaction
-const whatsappBtn = document.querySelector('.whatsapp-btn');
-if (whatsappBtn) {
-    whatsappBtn.addEventListener('click', function () {
-        this.classList.remove('pulse');
-    });
-}
-        

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Multi-Service Quotation &amp; Booking Engine | The Daniel Generation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#424141",
+                        "on-secondary-container": "#392700",
+                        "on-primary-fixed": "#261900",
+                        "outline-variant": "#4f4634",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdea6",
+                        "on-tertiary": "#313030",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "surface-tint": "#f6be3b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary": "#f9c03d",
+                        "on-background": "#e2e2e2",
+                        "primary-fixed": "#ffdea0",
+                        "outline": "#9c8f7a",
+                        "surface-dim": "#121414",
+                        "primary-fixed-dim": "#f6be3b",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-container-high": "#282a2b",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-variant": "#333535",
+                        "secondary": "#f7bd48",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "on-primary-fixed-variant": "#5c4300",
+                        "on-secondary-fixed": "#271900",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-primary-container": "#553d00",
+                        "primary-container": "#daa520",
+                        "secondary-container": "#ba880f",
+                        "inverse-primary": "#795900",
+                        "surface-container-highest": "#333535",
+                        "on-surface": "#e2e2e2",
+                        "inverse-surface": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#afadac",
+                        "surface": "#121414",
+                        "background": "#121414",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "surface-container": "#1e2020",
+                        "surface-bright": "#38393a",
+                        "tertiary": "#cbc8c8",
+                        "on-secondary": "#412d00",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "on-surface-variant": "#d3c5ae",
+                        "inverse-on-surface": "#2f3131",
+                        "on-primary": "#402d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "80px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Playfair Display"],
+                        "display-xl": ["Playfair Display"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-xl": ["72px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0A0A0A; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(218, 165, 32, 0.2);
+        }
+        .gold-glow:hover, .gold-glow.active {
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.15);
+            border-color: rgba(218, 165, 32, 0.6);
+        }
+        .input-dark {
+            background-color: #000;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .input-dark:focus {
+            border-color: #daa520;
+            box-shadow: inset 0 0 4px rgba(218,165,32,0.4);
+        }
+        .holographic-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(218,165,32,0.5), transparent);
+        }
+        /* Hide number input spinners */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] { -moz-appearance: textfield; }
+    </style>
+</head>
+<body class="text-on-background min-h-screen flex flex-col relative overflow-x-hidden antialiased">
+<!-- TopNavBar JSON Rendering -->
+<nav class="fixed top-0 w-full z-50 bg-surface/30 backdrop-blur-3xl border-b border-primary/20 shadow-[0_20px_50px_rgba(218,165,32,0.05)]">
+<div class="flex justify-between items-center px-margin-desktop py-unit-3 max-w-container-max mx-auto hidden md:flex">
+<div class="font-display-lg text-headline-lg tracking-tighter text-primary">
+                The Daniel Generation
+            </div>
+<div class="flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary pb-1" href="#">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Investments</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Insights</a>
+</div>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded hover:shadow-[0_0_15px_rgba(218,165,32,0.4)] transition-all scale-95 hover:scale-100 duration-200">
+                Partner With Us
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full relative z-10">
+<header class="mb-16 text-center max-w-3xl mx-auto">
+<h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary mb-6">Service Quotation</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Design a bespoke engagement tailored to your executive requirements. Our automated engine prepares an instantaneous WhatsApp proposition.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Form Sections -->
+<div class="lg:col-span-8 flex flex-col gap-12">
+<!-- Venture Selection -->
+<section class="glass-panel p-8 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-8 h-8 border-t border-l border-primary opacity-50"></div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">I. Select Venture Focus</h2>
+<div class="holographic-divider mb-8 w-full"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="venture-selection">
+<!-- Option 1 -->
+<label class="glass-panel gold-glow p-6 rounded-lg cursor-pointer flex flex-col items-start gap-4 transition-all group">
+<input class="sr-only" name="venture" onchange="updateSummary()" type="radio" value="events"/>
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">mic</span>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Generali Events</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Master of Ceremonies, Weddings &amp; Gala Dinners</p>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="glass-panel gold-glow p-6 rounded-lg cursor-pointer flex flex-col items-start gap-4 transition-all group active">
+<input checked="" class="sr-only" name="venture" onchange="updateSummary()" type="radio" value="institute"/>
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">psychology</span>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Daniels Institute</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Body Language &amp; Corporate Training Solutions</p>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="glass-panel gold-glow p-6 rounded-lg cursor-pointer flex flex-col items-start gap-4 transition-all group">
+<input class="sr-only" name="venture" onchange="updateSummary()" type="radio" value="generation"/>
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">workspace_premium</span>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">The Daniel Generation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Keynote Speaking &amp; Leadership Mentorship</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Client Details -->
+<section class="glass-panel p-8 rounded-xl relative">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">II. Executive Details</h2>
+<div class="holographic-divider mb-8 w-full"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<input class="input-dark w-full px-4 py-3 rounded text-on-surface font-body-md peer focus:outline-none" id="fullName" oninput="updateSummary()" placeholder=" " type="text"/>
+<label class="absolute left-4 top-3 text-on-surface-variant font-label-caps text-label-caps transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-label-caps peer-focus:text-primary -top-6" for="fullName">Full Name</label>
+</div>
+<div class="relative">
+<input class="input-dark w-full px-4 py-3 rounded text-on-surface font-body-md peer focus:outline-none" id="organization" oninput="updateSummary()" placeholder=" " type="text"/>
+<label class="absolute left-4 top-3 text-on-surface-variant font-label-caps text-label-caps transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-label-caps peer-focus:text-primary -top-6" for="organization">Organization</label>
+</div>
+<div class="relative">
+<input class="input-dark w-full px-4 py-3 rounded text-on-surface font-body-md peer focus:outline-none" id="email" placeholder=" " type="email"/>
+<label class="absolute left-4 top-3 text-on-surface-variant font-label-caps text-label-caps transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-label-caps peer-focus:text-primary -top-6" for="email">Corporate Email</label>
+</div>
+<div class="relative">
+<input class="input-dark w-full px-4 py-3 rounded text-on-surface font-body-md peer focus:outline-none" id="whatsapp" placeholder=" " type="tel"/>
+<label class="absolute left-4 top-3 text-on-surface-variant font-label-caps text-label-caps transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-label-caps peer-focus:text-primary -top-6" for="whatsapp">WhatsApp Number</label>
+</div>
+</div>
+</section>
+<!-- Engagement Specs -->
+<section class="glass-panel p-8 rounded-xl relative">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">III. Engagement Specifications</h2>
+<div class="holographic-divider mb-8 w-full"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-primary">Event Format</label>
+<select class="input-dark w-full px-4 py-3 rounded text-on-surface font-body-md focus:outline-none" id="eventType" onchange="updateSummary()">
+<option value="Corporate Retreat">Corporate Retreat</option>
+<option value="Annual Conference">Annual Conference</option>
+<option value="Executive Seminar">Executive Seminar</option>
+<option value="Private Gala">Private Gala</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-primary">Session Count</label>
+<select class="input-dark w-full px-4 py-3 rounded text-on-surface font-body-md focus:outline-none" id="sessionCount" onchange="updateSummary()">
+<option value="1 Session">Single Session</option>
+<option value="2 Sessions">Double Session</option>
+<option value="Half-Day Workshop">Half-Day Workshop</option>
+<option value="Multi-Day Engagement">Multi-Day Engagement</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-primary">Audience Size</label>
+<select class="input-dark w-full px-4 py-3 rounded text-on-surface font-body-md focus:outline-none" id="audienceSize" onchange="updateSummary()">
+<option value="&lt; 50 (Intimate)">Under 50</option>
+<option value="50 - 200 (Medium)">50 - 200</option>
+<option value="200 - 500 (Large)">200 - 500</option>
+<option value="500+ (Macro)">500+</option>
+</select>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Widget -->
+<div class="lg:col-span-4 sticky top-32">
+<div class="glass-panel rounded-xl flex flex-col h-full overflow-hidden">
+<div class="bg-[#000] p-6 border-b border-primary/20 flex items-center justify-between">
+<h3 class="font-label-caps text-label-caps text-primary">WhatsApp Preview</h3>
+<span class="material-symbols-outlined text-primary">chat</span>
+</div>
+<div class="p-6 bg-surface-container-low flex-grow font-body-md text-on-surface-variant leading-relaxed text-sm">
+<p id="preview-text">
+                            Hello Generali Team,<br/><br/>
+                            I am inquiring on behalf of <span class="text-on-surface font-bold" id="prev-org">[Organization]</span> regarding a <span class="text-on-surface font-bold" id="prev-venture">Daniels Institute</span> engagement.<br/><br/>
+                            We are planning a <span class="text-on-surface font-bold" id="prev-event">Corporate Retreat</span> requiring a <span class="text-on-surface font-bold" id="prev-session">Single Session</span> for an audience of <span class="text-on-surface font-bold" id="prev-audience">Under 50</span>.<br/><br/>
+                            Please provide a formal proposition and availability.<br/><br/>
+                            Regards,<br/>
+<span class="text-on-surface font-bold" id="prev-name">[Name]</span>
+</p>
+</div>
+<div class="p-6 border-t border-primary/20 bg-[#000]">
+<button class="w-full bg-gradient-to-r from-[#daa520] to-[#f9c03d] text-[#000] font-label-caps text-label-caps py-4 rounded hover:shadow-[0_0_25px_rgba(218,165,32,0.6)] transition-all flex justify-center items-center gap-2 group">
+                            Generate &amp; Send Instant Inquiry
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer JSON Rendering -->
+<footer class="bg-background w-full py-12 border-t border-primary/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-gutter max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-lg text-primary">
+                The Daniel Generation
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Terms of Engagement</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Global Offices</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Investor Relations</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant mt-6 md:mt-0 text-center">
+                © 2024 The Daniel Generation. Executive Futurism by Generali.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple JS for radio button active state and preview updating
+        const radioLabels = document.querySelectorAll('label:has(input[type="radio"])');
+        
+        radioLabels.forEach(label => {
+            const input = label.querySelector('input');
+            input.addEventListener('change', () => {
+                radioLabels.forEach(l => l.classList.remove('active', 'border-primary'));
+                if(input.checked) {
+                    label.classList.add('active');
+                }
+            });
+        });
+
+        const ventureMap = {
+            'events': 'Generali Events',
+            'institute': 'Daniels Institute',
+            'generation': 'The Daniel Generation'
+        };
+
+        function updateSummary() {
+            const org = document.getElementById('organization').value || '[Organization]';
+            const name = document.getElementById('fullName').value || '[Name]';
+            const ventureVal = document.querySelector('input[name="venture"]:checked').value;
+            const venture = ventureMap[ventureVal];
+            
+            const event = document.getElementById('eventType').options[document.getElementById('eventType').selectedIndex].text;
+            const session = document.getElementById('sessionCount').options[document.getElementById('sessionCount').selectedIndex].text;
+            const audience = document.getElementById('audienceSize').options[document.getElementById('audienceSize').selectedIndex].text;
+
+            document.getElementById('prev-org').innerText = org;
+            document.getElementById('prev-name').innerText = name;
+            document.getElementById('prev-venture').innerText = venture;
+            document.getElementById('prev-event').innerText = event;
+            document.getElementById('prev-session').innerText = session;
+            document.getElementById('prev-audience').innerText = audience;
+        }
+    </script>
+</body></html>

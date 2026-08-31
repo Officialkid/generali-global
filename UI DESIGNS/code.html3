@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meet Stephen Kago | The Daniel Generation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#282a2b",
+                      "tertiary": "#cbc8c8",
+                      "primary-container": "#daa520",
+                      "on-surface-variant": "#d3c5ae",
+                      "secondary-container": "#ba880f",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "surface-container": "#1e2020",
+                      "on-primary-fixed": "#261900",
+                      "surface-container-lowest": "#0c0f0f",
+                      "on-tertiary": "#313030",
+                      "surface-container-low": "#1a1c1c",
+                      "surface-dim": "#121414",
+                      "surface-bright": "#38393a",
+                      "inverse-primary": "#795900",
+                      "surface-variant": "#333535",
+                      "tertiary-container": "#afadac",
+                      "on-tertiary-container": "#424141",
+                      "on-secondary-fixed": "#271900",
+                      "on-secondary": "#412d00",
+                      "primary-fixed-dim": "#f6be3b",
+                      "inverse-on-surface": "#2f3131",
+                      "error-container": "#93000a",
+                      "outline": "#9c8f7a",
+                      "on-secondary-fixed-variant": "#5d4200",
+                      "outline-variant": "#4f4634",
+                      "on-surface": "#e2e2e2",
+                      "on-error": "#690005",
+                      "on-secondary-container": "#392700",
+                      "on-primary-container": "#553d00",
+                      "on-background": "#e2e2e2",
+                      "primary": "#f9c03d",
+                      "on-primary-fixed-variant": "#5c4300",
+                      "on-primary": "#402d00",
+                      "surface": "#121414",
+                      "secondary": "#f7bd48",
+                      "surface-tint": "#f6be3b",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "tertiary-fixed-dim": "#c9c6c5",
+                      "secondary-fixed": "#ffdea6",
+                      "surface-container-highest": "#333535",
+                      "background": "#121414",
+                      "on-error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#f7bd48",
+                      "primary-fixed": "#ffdea0",
+                      "inverse-surface": "#e2e2e2",
+                      "tertiary-fixed": "#e5e2e1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "margin-desktop": "80px",
+                      "margin-mobile": "20px",
+                      "gutter": "32px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "display-xl": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "56px",
+                              {
+                                      "lineHeight": "64px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-xl": [
+                              "72px",
+                              {
+                                      "lineHeight": "84px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(218, 165, 32, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(218, 165, 32, 0.04) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(218, 165, 32, 0.2);
+            box-shadow: 0 20px 50px rgba(218,165,32,0.05);
+        }
+
+        .gold-hairline {
+            border: 1px solid rgba(218, 165, 32, 0.2);
+        }
+        
+        .gold-hairline-bottom {
+            border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .holographic-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.4), transparent);
+        }
+
+        .executive-corner {
+            position: relative;
+        }
+        .executive-corner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-top: 1px solid #DAA520;
+            border-left: 1px solid #DAA520;
+            z-index: 10;
+        }
+
+        .btn-primary {
+            background-color: #DAA520;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.4);
+        }
+
+        .portrait-frame {
+            position: relative;
+            z-index: 1;
+        }
+        .portrait-frame::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(45deg, rgba(218, 165, 32, 0.1), transparent, rgba(218, 165, 32, 0.3));
+            z-index: -1;
+            filter: blur(10px);
+            border-radius: 4px;
+        }
+
+        /* Nav active state logic */
+        /* Executive matches our subject */
+    </style>
+</head>
+<body class="text-on-surface antialiased flex flex-col min-h-screen font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/30 backdrop-blur-xl border-b border-primary/20 shadow-[0_20px_50px_rgba(218,165,32,0.1)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full max-w-container-max mx-auto">
+<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg bg-gradient-to-r from-primary to-secondary-container bg-clip-text text-transparent">
+                The Daniel Generation
+            </div>
+<div class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<!-- Active Item: Executive -->
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300 transform active:scale-95" href="#">Executive</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 transform active:scale-95" href="#">Ventures</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 transform active:scale-95" href="#">Philanthropy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 transform active:scale-95" href="#">Perspective</a>
+</div>
+<div class="hidden md:block">
+<button class="btn-primary px-6 py-3 font-label-caps text-label-caps rounded-DEFAULT">
+                    Request Quotation
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16 items-start">
+<!-- Left Column: Portrait & Badges -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<!-- Portrait -->
+<div class="portrait-frame executive-corner glass-panel p-2">
+<div class="relative overflow-hidden border border-primary/20 aspect-[3/4]">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+<img alt="Executive Portrait" class="w-full h-full object-cover grayscale-[20%] contrast-125 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHrCec6NZnEMVcN-yZPYrib3jLY-4zwcngEiBwTu8AqgS3L_tGVBLW6MQbZdkYfH6QvQm5k7RGAQtgKl3lKfrNyEL8qcOpx2LOALZOc_cHf5s3ta_VhEU2SbaYlxpaHiM3NEEB0pERo0Kwc7JXxMWP4_EY7rbWcNOnTdIBKlV23tOuflTTRE5ZBg9Y-_V2eHr0wCU7C_CdxptU_P3XPlAS2G93lw1spsMz0BE52Ohf_LK4HPSU9AD9"/>
+</div>
+</div>
+<!-- Badges -->
+<div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+<span class="glass-panel px-4 py-2 text-label-caps font-label-caps text-primary uppercase tracking-widest rounded-full text-xs">
+                        Certified Behavioral Analyst
+                    </span>
+<span class="glass-panel px-4 py-2 text-label-caps font-label-caps text-primary uppercase tracking-widest rounded-full text-xs">
+                        Master of Ceremonies
+                    </span>
+<span class="glass-panel px-4 py-2 text-label-caps font-label-caps text-primary uppercase tracking-widest rounded-full text-xs">
+                        Corporate Strategist
+                    </span>
+<span class="glass-panel px-4 py-2 text-label-caps font-label-caps text-primary uppercase tracking-widest rounded-full text-xs">
+                        Founder, The Daniel Generation
+                    </span>
+</div>
+</div>
+<!-- Right Column: Bio & Info -->
+<div class="lg:col-span-7 flex flex-col gap-10 pt-4">
+<!-- Headers -->
+<div class="flex flex-col gap-4">
+<h2 class="text-label-caps font-label-caps text-primary uppercase tracking-[0.2em]">The Visionary at the Helm</h2>
+<h1 class="font-display-lg md:font-display-xl text-display-lg md:text-display-xl text-on-surface leading-none">
+                        Meet Stephen Kago
+                    </h1>
+<div class="flex items-center gap-4 mt-2">
+<div class="h-px bg-primary/40 w-12"></div>
+<span class="text-on-surface-variant font-label-caps text-label-caps italic">Famously Known as "Generali"</span>
+</div>
+</div>
+<!-- Biography -->
+<div class="prose prose-invert prose-lg max-w-none text-on-surface-variant font-body-lg flex flex-col gap-6">
+<p class="leading-relaxed">
+                        Stephen Kago, affectionately known across executive boards as "Generali", stands at the intersection of human behavioral dynamics and high-stakes corporate strategy. As the founder of The Daniel Generation, he has architected a framework for leadership that transcends traditional management, focusing on holistic dominion and strategic foresight.
+                    </p>
+<p class="leading-relaxed">
+                        His specialized training in behavioral analysis allows him to decode organizational friction and deploy nuanced strategies that align human capital with overarching institutional goals. Generali's approach is not merely theoretical; it is a battle-tested methodology forged through years of advising top-tier executives, facilitating critical corporate negotiations, and commanding stages across the globe.
+                    </p>
+</div>
+<!-- Quote Callout -->
+<div class="glass-panel executive-corner p-8 mt-4 relative">
+<span class="material-symbols-outlined absolute -top-4 -left-4 text-primary text-4xl opacity-50 bg-background rounded-full p-2">format_quote</span>
+<p class="font-headline-lg md:font-headline-lg text-primary italic leading-snug">
+                        "The Daniel Mantle is one of the greatest strategies for dominion—combining light, understanding, and excellent wisdom to shape systems and culture."
+                    </p>
+</div>
+</div>
+</div>
+<!-- Impact Counter Strip -->
+<div class="mt-24 pt-12 border-t border-primary/20">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-transparent lg:divide-primary/20">
+<div class="flex flex-col items-center text-center gap-2 px-4 group">
+<span class="font-display-lg text-primary group-hover:text-secondary transition-colors duration-300">15,000+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Leaders Mentored</span>
+</div>
+<div class="flex flex-col items-center text-center gap-2 px-4 group lg:border-l lg:border-primary/20">
+<span class="font-display-lg text-primary group-hover:text-secondary transition-colors duration-300">500+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Corporate &amp; Social Events</span>
+</div>
+<div class="flex flex-col items-center text-center gap-2 px-4 group lg:border-l lg:border-primary/20">
+<span class="font-display-lg text-primary group-hover:text-secondary transition-colors duration-300">50+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Institutional Workshops</span>
+</div>
+<div class="flex flex-col items-center text-center gap-2 px-4 group lg:border-l lg:border-primary/20">
+<span class="material-symbols-outlined text-5xl text-primary mb-1 group-hover:scale-110 transition-transform duration-300">public</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Global Reach across Africa &amp; Beyond</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-12 relative">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="font-headline-lg-mobile md:font-headline-lg-mobile text-headline-lg-mobile text-primary">
+                The Daniel Generation
+            </div>
+<div class="flex flex-wrap justify-center gap-6 font-body-md text-body-md text-on-surface-variant">
+<a class="hover:text-primary transition-opacity" href="#">Global Ventures</a>
+<a class="hover:text-primary transition-opacity" href="#">Executive Philanthropy</a>
+<a class="hover:text-primary transition-opacity" href="#">Strategic Partners</a>
+<a class="hover:text-primary transition-opacity" href="#">Privacy Registry</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 The Daniel Generation. All Rights Reserved.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,27 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Quotation &amp; Proposal Engine — The Daniel Generation</title>
-    <meta name="description" content="Generate a customized quotation for Generali Events, Daniels Institute of Body Language, or The Daniel Generation Leadership School.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=20260916b">
-    <link rel="stylesheet" href="booking.css">
+    <title>Request Executive Quote | Stephen Githinji — Daniels Institute &amp; Generali Events</title>
+    <meta name="description" content="Instant Quotation Engine &amp; Booking Advisory for Keynotes, Corporate Training, Body Language Masterclasses, and Event Hosting with Stephen Githinji.">
+    <link rel="stylesheet" href="style.css?v=20260916c">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .quote-card {
+            background: #0E1013;
+            border: 1px solid var(--color-hairline-bright);
+            border-radius: var(--radius-lg);
+            padding: 3rem 5%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--color-gold-bright);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 13px 16px;
+            border-radius: var(--radius-sm);
+            color: #FFFFFF;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+        .form-control:focus {
+            border-color: var(--color-gold-bright);
+            box-shadow: 0 0 15px rgba(249, 192, 61, 0.25);
+            background: rgba(255, 255, 255, 0.07);
+        }
+        .form-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .form-grid-2 { grid-template-columns: 1fr; gap: 1rem; }
+            .quote-card { padding: 2rem 1.4rem; }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Top Contact Bar (Centered, Clean & Professional) -->
+
+    <!-- Top Contact Bar -->
     <div class="top-contact-bar">
         <div class="top-bar-inner">
             <a href="tel:+254114995449" class="top-bar-item"><i class="fas fa-phone-alt"></i> +254 114 995 449</a>
@@ -30,7 +69,7 @@
         </div>
     </div>
 
-    <!-- Main Navigation Bar (Obsidian Black) -->
+    <!-- Main Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -44,7 +83,7 @@
                 <a href="institute.html">Daniel Institute</a>
                 <a href="events.html">Generali Events</a>
                 <a href="daniel-generation.html">Daniel Generation</a>
-                <a href="booking.html" class="nav-cta-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
+                <a href="booking.html" class="active nav-cta-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <button class="hamburger" aria-label="Open Mobile Menu"><i class="fas fa-bars"></i></button>
@@ -70,190 +109,114 @@
         </div>
     </div>
 
-<main class="booking-page-container">
-        <header class="booking-header">
-            <div class="mono-tag" style="color: var(--color-gold-bright); margin-bottom: 8px;">Executive Proposition Builder</div>
-            <h1 class="hero-title">Service <span class="gold-gradient-text">Quotation</span></h1>
-            <p>Design a bespoke engagement tailored to your executive requirements. Our automated engine prepares an instantaneous WhatsApp proposition.</p>
-            <div class="holographic-divider"></div>
-        </header>
+    <!-- HERO SECTION -->
+    <header class="hero-fullbleed" style="background-image: linear-gradient(180deg, rgba(10, 10, 12, 0.45) 0%, rgba(10, 10, 12, 0.78) 80%, #0A0A0C 100%), url('images/cooperate.jpg');">
+        <div class="hero-fullbleed-content">
+            <div class="hero-generali-badge">
+                <i class="fas fa-file-invoice-dollar" style="color: var(--color-gold-bright);"></i>
+                <span>Executive Engagement Quotation Engine</span>
+            </div>
+            
+            <h1 class="hero-name-title">Request a Quote</h1>
+            
+            <p class="hero-tagline-statement">
+                Tailored Engagements for Corporate Training, Keynote Addresses, Event Hosting &amp; Executive Advisory.
+            </p>
+        </div>
+    </header>
 
-        <form id="quote-builder-form">
-            <div class="booking-layout-grid">
-                <!-- Left Column: Form Steps -->
-                <div class="booking-form-steps">
-                    <!-- Step 1: Venture Selection -->
-                    <div class="form-section-card luminous-card">
-                        <div class="executive-accent"></div>
-                        <div class="form-section-title">
-                            <i class="fas fa-layer-group"></i> I. Select Venture Focus
-                        </div>
-                        <p style="font-size: 0.95rem; margin-bottom: 1rem;">Choose the specific subsidiary under The Daniel Generation Group:</p>
-                        
-                        <div class="venture-radio-grid">
-                            <!-- Venture 1 -->
-                            <label class="venture-radio-card active" id="card-events">
-                                <input type="radio" name="venture_focus" value="Generali Events" checked>
-                                <i class="fas fa-microphone-lines"></i>
-                                <div class="venture-card-title">Generali Events</div>
-                                <div class="venture-card-sub">Event MC, Luxury Weddings &amp; Corporate Galas</div>
-                            </label>
+    <!-- ======================================================================
+         SECTION: QUOTATION ENGINE (Silver #E2E6EA Layered Background)
+         ====================================================================== -->
+    <section class="section-layered-silver" id="calculator">
+        <div class="section-inner-container">
+            <div class="section-header">
+                <div class="mono-tag">Direct Engagement Form</div>
+                <h2>Tailor Your <span style="color: #8C6200;">Engagement</span></h2>
+                <p class="subtitle">Complete the details below for instant WhatsApp or email proposal dispatch.</p>
+                <div class="holographic-divider" style="background: linear-gradient(90deg, transparent, rgba(140, 98, 0, 0.4), transparent);"></div>
+            </div>
 
-                            <!-- Venture 2 -->
-                            <label class="venture-radio-card" id="card-institute">
-                                <input type="radio" name="venture_focus" value="Daniels Institute">
-                                <i class="fas fa-brain"></i>
-                                <div class="venture-card-title">Daniels Institute</div>
-                                <div class="venture-card-sub">Body Language &amp; Corporate Behavioral Training</div>
-                            </label>
-
-                            <!-- Venture 3 -->
-                            <label class="venture-radio-card" id="card-school">
-                                <input type="radio" name="venture_focus" value="The Daniel Generation">
-                                <i class="fas fa-crown"></i>
-                                <div class="venture-card-title">Leadership School</div>
-                                <div class="venture-card-sub">Virtual Mentorship &amp; Institutional Keynotes</div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Step 2: Client & Organization Details -->
-                    <div class="form-section-card luminous-card">
-                        <div class="executive-accent"></div>
-                        <div class="form-section-title">
-                            <i class="fas fa-id-card"></i> II. Client &amp; Organization Details
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="first_name">First Name *</label>
-                                <input type="text" id="first_name" name="first_name" required placeholder="e.g. David">
-                            </div>
-                            <div class="form-group">
-                                <label for="last_name">Last Name *</label>
-                                <input type="text" id="last_name" name="last_name" required placeholder="e.g. Mwangi">
-                            </div>
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="email">Corporate / Personal Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="name@company.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">WhatsApp Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="e.g. +254 712 345 678">
-                            </div>
+            <div class="quote-card">
+                <form id="booking-form" onsubmit="event.preventDefault(); sendBookingWhatsApp();">
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="client-name">Your Full Name *</label>
+                            <input type="text" id="client-name" class="form-control" placeholder="e.g. Dr. Jane Kamau" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="organization">Organization / Entity Name (Optional)</label>
-                            <input type="text" id="organization" name="organization" placeholder="e.g. Apex Corporation or Private Family Event">
+                            <label for="client-org">Organization / Company</label>
+                            <input type="text" id="client-org" class="form-control" placeholder="e.g. Apex Holdings Ltd">
                         </div>
                     </div>
 
-                    <!-- Step 3: Engagement Specifics -->
-                    <div class="form-section-card luminous-card">
-                        <div class="executive-accent"></div>
-                        <div class="form-section-title">
-                            <i class="fas fa-sliders-h"></i> III. Engagement Specifics
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="service_category">Service Category *</label>
-                                <select id="service_category" name="service_category" required>
-                                    <option value="Corporate Gala / Conference MC">Corporate Gala / Conference MC</option>
-                                    <option value="Luxury Wedding MC">Luxury Wedding MC</option>
-                                    <option value="Corporate Body Language Training">Corporate Body Language Training</option>
-                                    <option value="1-on-1 Executive Behavioral Coaching">1-on-1 Executive Behavioral Coaching</option>
-                                    <option value="The Daniel Generation School Mentorship">The Daniel Generation School Mentorship</option>
-                                    <option value="Institutional / School Keynote">Institutional / School Keynote</option>
-                                    <option value="Company Party / Team Building">Company Party / Team Building</option>
-                                    <option value="Other Bespoke Engagement">Other Bespoke Engagement</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="duration">Estimated Duration *</label>
-                                <select id="duration" name="duration" required>
-                                    <option value="1 to 2 Hours (Keynote / Short Session)">1 to 2 Hours (Keynote / Short Session)</option>
-                                    <option value="Half-Day (4 Hours)">Half-Day (4 Hours)</option>
-                                    <option value="Full-Day (8 Hours)">Full-Day (8 Hours)</option>
-                                    <option value="Multi-Day Summit / Retreat">Multi-Day Summit / Retreat</option>
-                                    <option value="Monthly Cohort Mentorship">Monthly Cohort Mentorship</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="audience_size">Estimated Audience Size</label>
-                                <select id="audience_size" name="audience_size">
-                                    <option value="Intimate (1 - 25 delegates)">Intimate (1 - 25 delegates)</option>
-                                    <option value="Medium (25 - 100 attendees)">Medium (25 - 100 attendees)</option>
-                                    <option value="Large (100 - 500 guests)">Large (100 - 500 guests)</option>
-                                    <option value="Auditorium (500+ attendees)">Auditorium (500+ attendees)</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="event_date">Target Date / Timeline</label>
-                                <input type="text" id="event_date" name="event_date" placeholder="e.g. October 2026 or Flexible">
-                            </div>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="client-email">Email Address *</label>
+                            <input type="email" id="client-email" class="form-control" placeholder="e.g. jane@apexholdings.com" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="notes">Special Requirements / Event Goals</label>
-                            <textarea id="notes" name="notes" rows="3" placeholder="Briefly describe your objectives, venue location, or key focus areas..."></textarea>
+                            <label for="client-phone">Phone Number (WhatsApp) *</label>
+                            <input type="tel" id="client-phone" class="form-control" placeholder="e.g. +254 700 000 000" required>
                         </div>
                     </div>
-                </div>
 
-                <!-- Right Column: Sticky Real-Time Proposal Preview -->
-                <div class="booking-summary-col">
-                    <div class="quote-summary-card">
-                        <div class="executive-accent"></div>
-                        <div class="summary-header">
-                            <div class="mono-tag" style="color: var(--color-gold-bright); margin-bottom: 4px;">Proposition Summary</div>
-                            <h3 style="font-size: 1.4rem; color: var(--color-text-light);">Instant Quotation</h3>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="engagement-type">Service Required *</label>
+                            <select id="engagement-type" class="form-control" style="background: #1A1C20;" required>
+                                <option value="" disabled selected>-- Select Service Category --</option>
+                                <option value="Corporate Training & Boardroom Gravitas">Daniels Institute: Corporate Training &amp; Boardroom Gravitas</option>
+                                <option value="Micro-Expressions & Deception Masterclass">Daniels Institute: Micro-Expressions &amp; Deception Masterclass</option>
+                                <option value="Private 1-on-1 C-Suite Coaching">Daniels Institute: Private 1-on-1 C-Suite Coaching</option>
+                                <option value="Corporate Gala & Summit Hosting">Generali Events: Corporate Gala &amp; Summit Hosting</option>
+                                <option value="Luxury Wedding & Reception Compere">Generali Events: Luxury Wedding &amp; Reception Compère</option>
+                                <option value="Team Building & Retreat Facilitation">Generali Events: Team Building &amp; Retreat Facilitation</option>
+                                <option value="Transformational Keynote Address">Keynote: Transformational &amp; Dominion Keynote</option>
+                                <option value="The Daniel Generation Cohort Enrollment">The Daniel Generation: Mentorship Enrollment</option>
+                            </select>
                         </div>
 
-                        <div class="summary-details-list">
-                            <div class="summary-item">
-                                <span class="summary-label">Venture:</span>
-                                <span class="summary-value" id="summary-venture">Generali Events</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">Category:</span>
-                                <span class="summary-value" id="summary-category">Corporate Gala MC</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">Duration:</span>
-                                <span class="summary-value" id="summary-duration">1 to 2 Hours</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">Client Name:</span>
-                                <span class="summary-value" id="summary-client">Pending Entry</span>
-                            </div>
+                        <div class="form-group">
+                            <label for="event-date">Proposed Date / Timeline</label>
+                            <input type="date" id="event-date" class="form-control" style="background: #1A1C20;">
                         </div>
+                    </div>
 
-                        <div class="holographic-divider" style="margin: 1.5rem 0;"></div>
+                    <div class="form-group">
+                        <label for="event-location">Event Location / Venue</label>
+                        <input type="text" id="event-location" class="form-control" placeholder="e.g. Radisson Blu Nairobi / Virtual">
+                    </div>
 
-                        <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">Clicking below will format a comprehensive, pre-filled proposal directly into WhatsApp for Stephen Githinji (Generali).</p>
+                    <div class="form-group">
+                        <label for="event-notes">Brief Overview / Specific Objectives</label>
+                        <textarea id="event-notes" class="form-control" rows="4" placeholder="Describe expected audience size, key themes, or specific outcomes..."></textarea>
+                    </div>
 
-                        <button type="submit" class="whatsapp-dispatch-btn" id="dispatch-btn">
-                            <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Generate &amp; Send Proposal
+                    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 1rem;">
+                        <button type="submit" class="btn-primary" style="flex-grow: 1; padding: 15px; font-size: 1rem;">
+                            Submit &amp; Open in WhatsApp <i class="fab fa-whatsapp"></i>
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
-        </form>
-    </main>
+        </div>
+    </section>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-consent-banner" id="cookie-consent-banner">
+        <div class="cookie-text">
+            <strong>Cookie Notice:</strong> We use cookies to elevate your browsing experience and optimize our leadership advisory tools.
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-btn-dismiss" id="cookie-dismiss-btn">Preferences</button>
+            <button class="cookie-btn-accept" id="cookie-accept-btn">Accept All</button>
+        </div>
+    </div>
 
     <!-- Footer -->
-        <!-- FOOTER (Black) -->
-        <!-- FOOTER (Black) -->
     <footer>
         <div class="footer-content">
             <div class="footer-top">
@@ -299,6 +262,31 @@
             </div>
         </div>
     </footer>
-    <script src="script.js?v=20260916b"></script>
+
+    <script src="script.js?v=20260916c"></script>
+    <script>
+        function sendBookingWhatsApp() {
+            const name = document.getElementById('client-name').value;
+            const org = document.getElementById('client-org').value || 'Individual/Direct';
+            const email = document.getElementById('client-email').value;
+            const phone = document.getElementById('client-phone').value;
+            const service = document.getElementById('engagement-type').value;
+            const date = document.getElementById('event-date').value || 'To Be Agreed';
+            const location = document.getElementById('event-location').value || 'Nairobi/Virtual';
+            const notes = document.getElementById('event-notes').value || 'None';
+
+            const msg = `*NEW ENGAGEMENT INQUIRY — STEPHEN GITHINJI PLATFORM*%0A%0A` +
+                        `*Client:* ${encodeURIComponent(name)}%0A` +
+                        `*Organization:* ${encodeURIComponent(org)}%0A` +
+                        `*Email:* ${encodeURIComponent(email)}%0A` +
+                        `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                        `*Service Required:* ${encodeURIComponent(service)}%0A` +
+                        `*Proposed Date:* ${encodeURIComponent(date)}%0A` +
+                        `*Location:* ${encodeURIComponent(location)}%0A` +
+                        `*Notes:* ${encodeURIComponent(notes)}`;
+
+            window.open(`https://wa.me/254114995449?text=${msg}`, '_blank');
+        }
+    </script>
 </body>
 </html>

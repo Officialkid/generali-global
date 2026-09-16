@@ -108,18 +108,19 @@ p {
 }
 
 /* ==========================================================================
-   TOP CONTACT BAR (Centered, Clean & Professional)
+   TOP CONTACT BAR (Metallic Gold with Pure Black Content - Attention Grabbing)
    ========================================================================== */
 .top-contact-bar {
-    background: #060608;
-    border-bottom: 1px solid rgba(218, 165, 32, 0.18);
-    padding: 8px 5%;
-    font-family: var(--font-mono);
-    font-size: 0.82rem;
-    color: var(--color-text-muted);
-    position: relative;
-    z-index: 1002;
-    width: 100%;
+    background: linear-gradient(135deg, #DAA520 0%, #F9C03D 50%, #C5931D 100%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+    padding: 8px 5% !important;
+    font-family: var(--font-mono) !important;
+    font-size: 0.84rem !important;
+    color: #000000 !important;
+    position: relative !important;
+    z-index: 1002 !important;
+    width: 100% !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
 }
 
 .top-bar-inner {
@@ -137,22 +138,27 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--color-text-muted);
+    color: #000000 !important;
     text-decoration: none;
-    transition: color 0.2s;
-    font-weight: 500;
+    transition: opacity 0.2s, transform 0.2s;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em;
 }
 
 .top-bar-item:hover {
-    color: var(--color-gold-bright);
+    color: #000000 !important;
+    opacity: 0.8;
+    transform: translateY(-1px);
 }
 
 .top-bar-item i {
-    color: var(--color-gold-bright);
+    color: #000000 !important;
+    font-size: 0.92rem;
 }
 
 .top-bar-sep {
-    color: rgba(218, 165, 32, 0.35);
+    color: rgba(0, 0, 0, 0.35) !important;
+    font-weight: 700;
 }
 
 /* ==========================================================================
@@ -802,7 +808,7 @@ p {
 }
 
 /* ==========================================================================
-   ✨ SECTION 4: WHAT PEOPLE SAY ABOUT ME (High-Contrast White Text)
+   ✨ SECTION 4: WHAT PEOPLE SAY ABOUT ME (Option B Frosted Glass Aesthetic)
    ========================================================================== */
 .testimonials-grid-silver {
     display: grid;
@@ -810,39 +816,48 @@ p {
     gap: 2.2rem;
 }
 
-.testimonial-card-black {
-    background: #0E1013 !important;
-    border: 1px solid rgba(218, 165, 32, 0.35);
-    border-radius: var(--radius-lg);
-    padding: 2.4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+/* Option B Frosted Glass Testimonial Cards on Silver */
+.testimonials-grid-silver .testimonial-card-black,
+.testimonials-grid-silver .testimonial-card-frosted {
+    background: rgba(255, 255, 255, 0.68) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.9) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: 2.4rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    position: relative !important;
 }
 
-.testimonial-card-black:hover {
-    border-color: var(--color-gold-bright);
-    transform: translateY(-6px);
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.5);
+.testimonials-grid-silver .testimonial-card-black:hover,
+.testimonials-grid-silver .testimonial-card-frosted:hover {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(218, 165, 32, 0.65) !important;
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(218, 165, 32, 0.2) !important;
 }
 
-.testimonial-card-black p,
-.testimonial-card-black .testimonial-quote-black {
-    font-size: 1.08rem !important;
+.testimonials-grid-silver p,
+.testimonials-grid-silver .testimonial-quote-black,
+.testimonials-grid-silver .testimonial-quote-frosted {
+    font-size: 1.05rem !important;
     font-style: italic !important;
-    color: #FFFFFF !important;
+    color: #1A1E24 !important;
     margin-bottom: 1.6rem !important;
     line-height: 1.75 !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    text-shadow: none !important;
+    font-weight: 400 !important;
 }
 
-.testimonial-author-box-black {
+.testimonials-grid-silver .testimonial-author-box-black {
     display: flex;
     align-items: center;
     gap: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
     padding-top: 1.2rem;
 }
 
@@ -850,27 +865,30 @@ p {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: var(--color-gold-transparent);
-    border: 1px solid var(--color-gold-bright);
+    background: linear-gradient(135deg, #DAA520 0%, #F9C03D 100%) !important;
+    border: 1px solid rgba(218, 165, 32, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-gold-bright);
-    font-weight: 700;
+    color: #000000 !important;
+    font-weight: 800 !important;
     font-family: var(--font-heading);
     font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(218, 165, 32, 0.25);
 }
 
 .author-info-black h4 {
     font-size: 1.1rem;
-    color: #FFFFFF !important;
+    color: #0F1216 !important;
     font-weight: 700;
+    margin-bottom: 2px;
 }
 
 .author-info-black span {
     font-size: 0.85rem;
-    color: var(--color-gold-bright) !important;
+    color: #8C6200 !important;
     font-family: var(--font-mono);
+    font-weight: 600;
 }
 
 /* ==========================================================================
@@ -1328,4 +1346,164 @@ footer {
     .silver-quote-box p {
         font-size: 1.05rem;
     }
+}
+
+/* ==========================================================================
+   ✨ OPTION B: FROSTED GLASS & POLISHED SILVER CARDS
+   ========================================================================== */
+.card-frosted-silver {
+    background: rgba(255, 255, 255, 0.62) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.85) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: 2.2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    position: relative !important;
+}
+
+.card-frosted-silver:hover {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border-color: rgba(218, 165, 32, 0.6) !important;
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(218, 165, 32, 0.2) !important;
+}
+
+.card-frosted-silver .card-pillar-tag {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: #8C6200;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.card-frosted-silver h3 {
+    font-size: 1.4rem !important;
+    color: #0F1216 !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+.card-frosted-silver p {
+    font-size: 1rem !important;
+    color: #2D333B !important;
+    line-height: 1.7 !important;
+    font-weight: 400 !important;
+}
+
+
+/* ==========================================================================
+   ✨ OPTION B EXTENSIONS: EVENT CARDS & BOOKING FORM FROSTED GLASS
+   ========================================================================== */
+.event-card-frosted {
+    background: rgba(255, 255, 255, 0.68) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.9) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+.event-card-frosted:hover {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(218, 165, 32, 0.65) !important;
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(218, 165, 32, 0.2) !important;
+}
+
+.event-card-frosted h3 {
+    font-size: 1.35rem !important;
+    color: #0F1216 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+}
+
+.event-card-frosted p {
+    color: #2D333B !important;
+    font-size: 0.96rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 1.2rem !important;
+}
+
+.event-card-frosted .service-card-action {
+    color: #8C6200 !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: gap 0.2s, color 0.2s !important;
+}
+
+.event-card-frosted .service-card-action:hover {
+    color: #000000 !important;
+    gap: 10px !important;
+}
+
+/* Booking Quotation Engine Frosted Glass Card */
+.quote-card {
+    background: rgba(255, 255, 255, 0.72) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: 3.5rem 6% !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    max-width: 960px !important;
+    margin: 0 auto !important;
+}
+
+.form-group label {
+    font-family: var(--font-mono) !important;
+    font-size: 0.85rem !important;
+    color: #8C6200 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-weight: 700 !important;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(0, 0, 0, 0.18) !important;
+    padding: 13px 16px !important;
+    border-radius: var(--radius-sm) !important;
+    color: #0F1216 !important;
+    font-family: var(--font-body) !important;
+    font-size: 1rem !important;
+    outline: none !important;
+    transition: all 0.25s ease !important;
+}
+
+.form-control::placeholder {
+    color: #718096 !important;
+}
+
+.form-control:focus {
+    border-color: #DAA520 !important;
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.3) !important;
+    background: #FFFFFF !important;
+}
+
+select.form-control,
+select.form-control option {
+    background-color: #FFFFFF !important;
+    color: #0F1216 !important;
+}
+
+input[type="date"].form-control {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    color: #0F1216 !important;
 }

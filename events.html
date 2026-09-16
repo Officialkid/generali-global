@@ -16,90 +16,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20260831b">
+    <link rel="stylesheet" href="style.css?v=20260916b">
 </head>
 
 <body>
-    <!-- Top Contact Bar -->
+    <!-- Top Contact Bar (Centered, Clean & Professional) -->
     <div class="top-contact-bar">
         <div class="top-bar-inner">
-            <div style="display: flex; gap: 20px; align-items: center;">
-                <a href="tel:+254114995449" class="top-bar-item"><i class="fas fa-phone-alt"></i> +254 114 995 449</a>
-                <a href="mailto:generaliglobal0@gmail.com" class="top-bar-item"><i class="fas fa-envelope"></i> generaliglobal0@gmail.com</a>
-            </div>
-            <div style="display: flex; gap: 15px; align-items: center;">
-                <span style="color: var(--color-gold-bright);"><i class="fas fa-certificate"></i> Official Portal</span>
-            </div>
+            <a href="tel:+254114995449" class="top-bar-item"><i class="fas fa-phone-alt"></i> +254 114 995 449</a>
+            <span class="top-bar-sep">|</span>
+            <a href="mailto:generaliglobal0@gmail.com" class="top-bar-item"><i class="fas fa-envelope"></i> generaliglobal0@gmail.com</a>
         </div>
     </div>
-    <!-- Top Glassmorphic Navigation -->
-    <nav class="navbar" id="navbar">
-        <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="The Daniel Generation Logo" class="nav-brand-logo">
-            <span class="logo-text">Generali Events</span>
-        </a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
+
+    <!-- Main Navigation Bar (Obsidian Black) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Stephen Githinji Logo" class="nav-brand-logo">
+                <span class="logo-text">STEPHEN GITHINJI</span>
+            </a>
             
-            <div class="nav-dropdown">
-                <a href="#ventures" class="dropdown-trigger active">Our Ventures <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-top: 1px;"></i></a>
-                <div class="dropdown-menu-box">
-                    <a href="institute.html" class="dropdown-item-link">
-                        <i class="fas fa-brain"></i>
-                        <div>
-                            <span class="dropdown-item-title">Daniels Institute</span>
-                            <span class="dropdown-item-sub">Body Language &amp; Executive Intelligence</span>
-                        </div>
-                    </a>
-                    <a href="events.html" class="dropdown-item-link" style="background: var(--color-gold-transparent);">
-                        <i class="fas fa-microphone-lines"></i>
-                        <div>
-                            <span class="dropdown-item-title">Generali Events</span>
-                            <span class="dropdown-item-sub">Luxury MC, Galas &amp; Event Hosting</span>
-                        </div>
-                    </a>
-                    <a href="daniel-generation.html" class="dropdown-item-link">
-                        <i class="fas fa-crown"></i>
-                        <div>
-                            <span class="dropdown-item-title">The Daniel Generation</span>
-                            <span class="dropdown-item-sub">Leadership School &amp; Mentorship</span>
-                        </div>
-                    </a>
-                </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="institute.html">Daniel Institute</a>
+                <a href="events.html" class="active">Generali Events</a>
+                <a href="daniel-generation.html">Daniel Generation</a>
+                <a href="booking.html" class="nav-cta-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
             </div>
 
-            <a href="#event-portfolio">Portfolio</a>
-            <a href="#event-coverage">Coverage</a>
-            <a href="booking.html" class="nav-cta-btn"><i class="fas fa-file-invoice-dollar"></i> Book MC</a>
+            <button class="hamburger" aria-label="Open Mobile Menu"><i class="fas fa-bars"></i></button>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-            <i class="fas fa-bars"></i>
-        </button>
     </nav>
 
-    <!-- Mobile Drawer Menu -->
-    <div class="mobile-menu" id="mobile-menu">
+    <!-- Mobile Drawer -->
+    <div class="mobile-menu">
         <div class="mobile-menu-header">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="The Daniel Generation Logo" class="nav-brand-logo">
-                <span class="logo-text">Generali Events</span>
+                <img src="images/logo.png" alt="Logo" class="nav-brand-logo">
+                <span class="logo-text">STEPHEN GITHINJI</span>
             </a>
-            <button class="close-btn" id="close-btn">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="close-btn" aria-label="Close Menu">&times;</button>
         </div>
         <div class="mobile-links">
-            <a href="index.html"><i class="fas fa-home"></i> Parent Group Hub</a>
-            <a href="institute.html"><i class="fas fa-brain"></i> Daniels Institute</a>
-            <a href="events.html" style="color: var(--color-gold-bright); font-weight: 700;"><i class="fas fa-microphone-lines"></i> Generali Events</a>
-            <a href="daniel-generation.html"><i class="fas fa-crown"></i> The Daniel Generation School</a>
-            <a href="#event-portfolio"><i class="fas fa-calendar-alt"></i> All Event Types</a>
-            <a href="booking.html"><i class="fas fa-file-alt"></i> Request Event Quote</a>
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About Stephen Githinji</a>
+            <a href="institute.html">Daniel Institute (Body Language)</a>
+            <a href="events.html">Generali Events (Compère &amp; MC)</a>
+            <a href="daniel-generation.html">The Daniel Generation</a>
+            <a href="booking.html" style="color: var(--color-gold-bright); font-weight: 700;">Request Instant Quote &rarr;</a>
         </div>
     </div>
 
-    <!-- Events Hero -->
-    <section class="hero" id="events-home">
+<section class="hero" id="events-home">
         <div class="hero-grid">
             <div class="hero-content">
                 <div class="hero-tagline-badge">
@@ -309,6 +279,7 @@
 
     <!-- Footer -->
         <!-- FOOTER (Black) -->
+        <!-- FOOTER (Black) -->
     <footer>
         <div class="footer-content">
             <div class="footer-top">
@@ -354,26 +325,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- 3-in-1 Floating Action Dock -->
-    <div class="floating-action-dock">
-        <div class="dock-expansion-menu" id="dock-menu">
-            <a href="https://wa.me/254114995449?text=Hello%20Stephen%20Githinji%20(Generali),%20I%20want%20to%20book%20Generali%20Events%20MC." target="_blank" class="dock-action-item">
-                <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.2rem;"></i> WhatsApp Stephen Githinji
-            </a>
-            <a href="booking.html" class="dock-action-item">
-                <i class="fas fa-calculator" style="color: var(--color-gold-bright); font-size: 1.1rem;"></i> Instant Event Quotation
-            </a>
-            <a href="index.html" class="dock-action-item">
-                <i class="fas fa-home" style="color: var(--color-gold-bright); font-size: 1.1rem;"></i> Parent Group Portal
-            </a>
-        </div>
-        <button class="dock-main-trigger" id="dock-toggle-btn" aria-label="Quick Action Menu">
-            <i class="fas fa-plus"></i>
-        </button>
-    </div>
-
-    <!-- Script -->
-    <script src="script.js?v=20260831b"></script>
+    <script src="script.js?v=20260916b"></script>
 </body>
 </html>

@@ -1,49 +1,17 @@
 /* ==========================================================================
-   STEPHEN GITHINJI — EXECUTIVE BRAND DESIGN SYSTEM
-   Fonts: Aptos / Plus Jakarta Sans | Playfair Display | JetBrains Mono
+   GENERALI GLOBAL — EXECUTIVE BRAND DESIGN SYSTEM
+   Fonts: Plus Jakarta Sans (Stately Body & Headings) | Montserrat (Solid UI & Badges)
    Palette: Obsidian Black (#0A0A0C) | Architectural Silver (#F0F3F6 / #DCE1E7) | Metallic Gold
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
 
 :root {
-    /* Brand Palette */
-    --color-black: #0A0A0C;
-    --color-dark-1: #111215;
-    --color-dark-2: #16181C;
-    --color-dark-3: #20232A;
-    
-    /* Luminous Silver Palette */
-    --color-silver: #E2E6EA;
-    --color-silver-surface: #D5DAE0;
-    --color-silver-light: #F4F6F8;
-    --color-silver-text: #111418;
-    --color-silver-muted: #3D444E;
-    
-    /* Gold Accents */
-    --color-gold: #B8860B;
-    --color-gold-light: #DAA520;
-    --color-gold-bright: #F9C03D;
-    --color-gold-transparent: rgba(218, 165, 32, 0.12);
-    --color-hairline: rgba(218, 165, 32, 0.25);
-    --color-hairline-bright: rgba(249, 192, 61, 0.6);
-    
-    /* Social Brand Colors */
-    --color-instagram: #E1306C;
-    --color-tiktok: #010101;
-    --color-linkedin: #0A66C2;
-    --color-youtube: #FF0000;
-    --color-whatsapp: #25D366;
-    
-    /* Text on Dark */
-    --color-text-light: #FFFFFF;
-    --color-text-body: #E8E8E8;
-    --color-text-muted: #C5B8A2;
-    
-    /* Typography — Primary Aptos Stack */
-    --font-heading: 'Aptos Display', 'Aptos', 'Playfair Display', Georgia, serif;
-    --font-body: 'Aptos', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-mono: 'JetBrains Mono', 'Aptos Mono', monospace;
+    /* Solid Executive Typography — Zero Flimsy Monospace */
+    --font-heading: 'Plus Jakarta Sans', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-ui: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'Montserrat', 'Plus Jakarta Sans', sans-serif; /* Fallback alias to solid sans */
     
     /* Layout */
     --container-max: 1320px;
@@ -88,7 +56,7 @@ p {
 }
 
 .mono-tag {
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.82rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -114,7 +82,9 @@ p {
     background: linear-gradient(135deg, #DAA520 0%, #F9C03D 50%, #C5931D 100%) !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
     padding: 8px 5% !important;
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-ui) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
     font-size: 0.84rem !important;
     color: #000000 !important;
     position: relative !important;
@@ -141,8 +111,10 @@ p {
     color: #000000 !important;
     text-decoration: none;
     transition: opacity 0.2s, transform 0.2s;
-    font-weight: 700 !important;
-    letter-spacing: 0.02em;
+    font-weight: 800 !important;
+    font-family: var(--font-ui) !important;
+    letter-spacing: 0.04em !important;
+    font-size: 0.92rem !important;
 }
 
 .top-bar-item:hover {
@@ -221,7 +193,7 @@ p {
 .nav-links a {
     color: var(--color-text-muted);
     text-decoration: none;
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.86rem;
     letter-spacing: 0.03em;
     padding: 7px 14px;
@@ -354,8 +326,8 @@ p {
     padding: 6rem 5% 5rem 5%;
     background-color: #0A0A0C;
     background-image: 
-        linear-gradient(180deg, rgba(10, 10, 12, 0.42) 0%, rgba(10, 10, 12, 0.75) 80%, #0A0A0C 100%),
-        url('images/about-me.jpg');
+        linear-gradient(180deg, rgba(10, 10, 12, 0.6) 0%, rgba(10, 10, 12, 0.88) 85%, #0A0A0C 100%),
+        url('images/cooperate.jpg');
     background-size: cover;
     background-position: center 25%;
     background-repeat: no-repeat;
@@ -383,7 +355,7 @@ p {
 }
 
 .hero-generali-badge span {
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.88rem;
     color: var(--color-gold-bright);
     letter-spacing: 0.12em;
@@ -424,7 +396,7 @@ p {
     background: var(--color-gold-light);
     color: #000;
     text-decoration: none;
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.92rem;
     font-weight: 700;
     padding: 15px 32px;
@@ -452,7 +424,7 @@ p {
     backdrop-filter: blur(15px);
     color: var(--color-gold-bright);
     text-decoration: none;
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.92rem;
     font-weight: 600;
     padding: 15px 32px;
@@ -499,7 +471,7 @@ p {
     border: 1px solid var(--color-hairline);
     padding: 10px 24px;
     border-radius: var(--radius-full);
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.88rem;
     color: var(--color-text-body);
     letter-spacing: 0.06em;
@@ -786,7 +758,7 @@ p {
     gap: 8px;
     color: var(--color-gold-bright) !important;
     text-decoration: none !important;
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.86rem;
     font-weight: 600;
     transition: gap 0.2s ease;
@@ -906,7 +878,7 @@ p {
 .author-info-black span {
     font-size: 0.85rem;
     color: #8C6200 !important;
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-weight: 600;
 }
 
@@ -959,7 +931,7 @@ p {
 }
 
 .contact-block-label {
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.8rem;
     color: var(--color-gold-bright);
     letter-spacing: 0.08em;
@@ -1109,7 +1081,7 @@ p {
     background: var(--color-gold-light);
     color: #000;
     border: none;
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.84rem;
     font-weight: 700;
     padding: 9px 20px;
@@ -1127,7 +1099,7 @@ p {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--color-text-body);
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.84rem;
     padding: 9px 16px;
     border-radius: var(--radius-sm);
@@ -1164,7 +1136,7 @@ footer {
 }
 
 .footer-heading {
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.95rem;
     color: var(--color-gold-bright);
     letter-spacing: 0.1em;
@@ -1393,7 +1365,7 @@ footer {
 }
 
 .card-frosted-silver .card-pillar-tag {
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     font-size: 0.82rem;
     color: #8C6200;
     font-weight: 700;
@@ -1486,7 +1458,9 @@ footer {
 }
 
 .form-group label {
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-ui) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
     font-size: 0.85rem !important;
     color: #8C6200 !important;
     text-transform: uppercase !important;

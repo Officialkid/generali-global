@@ -7,51 +7,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
 
 :root {
-    /* Brand Palette */
-    --color-black: #0A0A0C;
-    --color-dark-1: #111215;
-    --color-dark-2: #16181C;
-    --color-dark-3: #20232A;
+    /* ======================================================================
+       👑 THE PRESIDENTIAL 4-TONE EXECUTIVE PALETTE
+       Strictly: Obsidian Black | Platinum Silver | Pure White | Champagne Gold
+       Zero muddy browns, zero random shades. Pure 5-star executive consistency.
+       ====================================================================== */
     
-    /* Luminous Silver Palette */
-    --color-silver: #E2E6EA;
-    --color-silver-surface: #D5DAE0;
-    --color-silver-light: #F4F6F8;
-    --color-silver-text: #111418;
-    --color-silver-muted: #3D444E;
+    /* 1. Deep Obsidian / Caviar Black (Rich, atmospheric, bespoke) */
+    --color-obsidian: #090A0D;
+    --color-obsidian-card: #111318;
+    --color-obsidian-surface: #171A21;
+    --color-black: #090A0D;
     
-    /* Radiant Metallic Gold Accents */
-    --color-gold: #B8860B;
-    --color-gold-light: #DAA520;
-    --color-gold-bright: #F9C03D;
-    --color-gold-transparent: rgba(218, 165, 32, 0.15);
-    --color-hairline: rgba(218, 165, 32, 0.35);
-    --color-hairline-bright: rgba(249, 192, 61, 0.65);
+    /* 2. Platinum Architectural Silver (Crisp daylight luxury contrast) */
+    --color-silver-bg: #F4F6F9;
+    --color-silver-surface: #E8ECF2;
+    --color-silver-border: #D5DAE3;
+    --color-silver-text-heading: #090A0D;
+    --color-silver-text-body: #2B303A;
+    --color-silver-text-muted: #5A6270;
     
-    /* Social Brand Colors */
-    --color-instagram: #E1306C;
-    --color-tiktok: #010101;
-    --color-linkedin: #0A66C2;
-    --color-youtube: #FF0000;
-    --color-whatsapp: #25D366;
+    /* 3. Pure Royal Champagne Gold (EXACTLY ONE consistent, radiant bullion gold) */
+    --gold-primary: #D4AF37;                 /* Royal Bullion Gold */
+    --gold-bright: #E5C158;                  /* Luminous Champagne Highlight */
+    --gold-deep: #B5902B;                    /* Deep Burnished Gold */
+    --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F3DA8A 50%, #B5902B 100%);
+    --gold-gradient-text: linear-gradient(135deg, #F3DA8A 0%, #FFFFFF 40%, #D4AF37 100%);
+    --gold-glow: 0 0 25px rgba(212, 175, 55, 0.35);
+    --gold-border: rgba(212, 175, 55, 0.35);
+    --gold-border-bright: rgba(229, 193, 88, 0.7);
+    --gold-glass: rgba(212, 175, 55, 0.12);
     
-    /* High-Contrast Luminous Text on Dark Backgrounds */
+    /* Fallback variable aliases for maximum consistency */
+    --color-gold: var(--gold-primary);
+    --color-gold-light: var(--gold-primary);
+    --color-gold-bright: var(--gold-bright);
+    --color-gold-transparent: var(--gold-glass);
+    --color-hairline: var(--gold-border);
+    --color-hairline-bright: var(--gold-border-bright);
+    
+    /* 4. Pure Crisp White & Text Tiers on Obsidian */
     --color-text-light: #FFFFFF;
-    --color-text-body: #F0F3F6;
-    --color-text-muted: #D1D5DB;
+    --color-text-body: #ECEEF2;
+    --color-text-muted: #B8BFCB;
     
-    /* Solid Executive Typography — Zero Flimsy Monospace */
-    --font-heading: 'Plus Jakarta Sans', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Solid Stately Typography */
+    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-ui: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
-    --font-mono: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'Montserrat', sans-serif;
     
-    /* Layout */
+    /* Layout Dimensions */
     --container-max: 1320px;
-    --radius-sm: 6px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
-    --radius-xl: 32px;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
     --radius-full: 9999px;
 }
 
@@ -97,7 +107,7 @@ p {
 }
 
 .gold-gradient-text {
-    background: linear-gradient(135deg, #F9C03D 0%, #FFFFFF 50%, #DAA520 100%) !important;
+    background: linear-gradient(135deg, #E5C158 0%, #FFFFFF 50%, #D4AF37 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     display: inline-block;
@@ -105,7 +115,7 @@ p {
 
 .holographic-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.6), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
     margin: 1.8rem 0;
     width: 100%;
 }
@@ -114,18 +124,18 @@ p {
    TOP CONTACT BAR (Metallic Gold with Pure Black Content - Attention Grabbing)
    ========================================================================== */
 .top-contact-bar {
-    background: linear-gradient(135deg, #DAA520 0%, #F9C03D 50%, #C5931D 100%) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
-    padding: 8px 5% !important;
+    background: var(--gold-gradient) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18) !important;
+    padding: 9px 5% !important;
     font-family: var(--font-ui) !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.04em !important;
-    font-size: 0.84rem !important;
-    color: #000000 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    font-size: 0.88rem !important;
+    color: #090A0D !important;
     position: relative !important;
     z-index: 1002 !important;
     width: 100% !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 .top-bar-inner {
@@ -206,7 +216,7 @@ p {
     height: 40px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 8px rgba(218, 165, 32, 0.4));
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
 }
 
 .logo-text {
@@ -240,24 +250,24 @@ p {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #F9C03D !important;
-    background: rgba(218, 165, 32, 0.15) !important;
+    color: #E5C158 !important;
+    background: rgba(212, 175, 55, 0.15) !important;
 }
 
 .nav-cta-btn {
-    background: linear-gradient(135deg, #DAA520 0%, #F9C03D 100%) !important;
+    background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%) !important;
     color: #000000 !important;
     font-weight: 800 !important;
     padding: 10px 22px !important;
     border-radius: var(--radius-full) !important;
-    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4) !important;
     transition: all 0.3s ease !important;
     white-space: nowrap;
 }
 
 .nav-cta-btn:hover {
     background: var(--color-gold-bright) !important;
-    box-shadow: 0 0 30px rgba(249, 192, 61, 0.65) !important;
+    box-shadow: 0 0 30px rgba(229, 193, 88, 0.65) !important;
     transform: translateY(-2px);
 }
 
@@ -381,7 +391,7 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(218, 165, 32, 0.18);
+    background: rgba(212, 175, 55, 0.18);
     border: 1px solid var(--color-hairline-bright);
     padding: 8px 24px;
     border-radius: var(--radius-full);
@@ -428,7 +438,7 @@ p {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #DAA520 0%, #F9C03D 100%) !important;
+    background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%) !important;
     color: #000000 !important;
     text-decoration: none;
     font-family: var(--font-ui) !important;
@@ -439,7 +449,7 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 20px rgba(218, 165, 32, 0.45);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.45);
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
@@ -449,7 +459,7 @@ p {
 
 .btn-primary:hover {
     background: var(--color-gold-bright);
-    box-shadow: 0 0 35px rgba(249, 192, 61, 0.7);
+    box-shadow: 0 0 35px rgba(229, 193, 88, 0.7);
     transform: translateY(-2px);
     color: #000;
 }
@@ -464,7 +474,7 @@ p {
     font-weight: 700 !important;
     padding: 15px 32px;
     border-radius: var(--radius-sm);
-    border: 1.5px solid rgba(249, 192, 61, 0.75) !important;
+    border: 1.5px solid rgba(229, 193, 88, 0.75) !important;
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -475,9 +485,9 @@ p {
 }
 
 .btn-secondary:hover {
-    background: rgba(249, 192, 61, 0.15) !important;
-    border-color: #F9C03D !important;
-    color: #F9C03D !important;
+    background: rgba(229, 193, 88, 0.15) !important;
+    border-color: #E5C158 !important;
+    color: #E5C158 !important;
 }
 
 .btn-secondary:hover {
@@ -492,8 +502,8 @@ p {
     overflow: hidden;
     padding: 1.3rem 0;
     background: #0E1014;
-    border-top: 1px solid rgba(218, 165, 32, 0.35);
-    border-bottom: 1px solid rgba(218, 165, 32, 0.35);
+    border-top: 1px solid rgba(212, 175, 55, 0.35);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
     position: relative;
     white-space: nowrap;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
@@ -510,7 +520,7 @@ p {
     align-items: center;
     gap: 10px;
     background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(218, 165, 32, 0.5) !important;
+    border: 1px solid rgba(212, 175, 55, 0.5) !important;
     padding: 10px 24px;
     border-radius: var(--radius-full);
     font-family: var(--font-ui) !important;
@@ -524,7 +534,7 @@ p {
 }
 
 .marquee-pill i {
-    color: #F9C03D !important;
+    color: #E5C158 !important;
     font-size: 1rem !important;
 }
 
@@ -552,7 +562,7 @@ p {
 }
 
 .section-layered-silver .mono-tag {
-    color: #8C6200 !important;
+    color: #D4AF37 !important;
     font-weight: 800 !important;
 }
 
@@ -582,7 +592,7 @@ p {
 }
 
 .section-layered-black .mono-tag {
-    color: #F9C03D !important;
+    color: #E5C158 !important;
     font-weight: 800 !important;
 }
 
@@ -614,7 +624,7 @@ p {
 }
 
 .section-layered-silver .mono-tag {
-    color: #8C6200 !important;
+    color: #D4AF37 !important;
     font-weight: 800;
 }
 
@@ -669,7 +679,7 @@ p {
 }
 
 .silver-cred-item i {
-    color: #B8860B;
+    color: #D4AF37;
     font-size: 1.2rem;
     margin-top: 2px;
 }
@@ -683,7 +693,7 @@ p {
 
 .silver-quote-box {
     background: rgba(255, 255, 255, 0.85);
-    border-left: 5px solid #B8860B;
+    border-left: 5px solid #D4AF37;
     padding: 1.4rem 1.8rem;
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
@@ -703,7 +713,7 @@ p {
     overflow: hidden;
     height: 540px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-    border: 2px solid rgba(218, 165, 32, 0.7);
+    border: 2px solid rgba(212, 175, 55, 0.7);
     background: #000;
 }
 
@@ -763,7 +773,7 @@ p {
 
 .service-interactive-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(218, 165, 32, 0.3);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
     border-color: var(--color-gold-bright);
 }
 
@@ -867,7 +877,7 @@ p {
 .carousel-arrow-btn:hover {
     background: var(--color-gold-bright);
     color: #000;
-    box-shadow: 0 0 20px rgba(249, 192, 61, 0.6);
+    box-shadow: 0 0 20px rgba(229, 193, 88, 0.6);
     transform: scale(1.08);
 }
 
@@ -900,9 +910,9 @@ p {
 .testimonials-grid-silver .testimonial-card-black:hover,
 .testimonials-grid-silver .testimonial-card-frosted:hover {
     background: rgba(255, 255, 255, 0.92) !important;
-    border-color: rgba(218, 165, 32, 0.65) !important;
+    border-color: rgba(212, 175, 55, 0.65) !important;
     transform: translateY(-6px) !important;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(218, 165, 32, 0.2) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(212, 175, 55, 0.2) !important;
 }
 
 .testimonials-grid-silver p,
@@ -929,8 +939,8 @@ p {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #DAA520 0%, #F9C03D 100%) !important;
-    border: 1px solid rgba(218, 165, 32, 0.8);
+    background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%) !important;
+    border: 1px solid rgba(212, 175, 55, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -938,7 +948,7 @@ p {
     font-weight: 800 !important;
     font-family: var(--font-heading);
     font-size: 1rem;
-    box-shadow: 0 4px 10px rgba(218, 165, 32, 0.25);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.25);
 }
 
 .author-info-black h4 {
@@ -950,7 +960,7 @@ p {
 
 .author-info-black span {
     font-size: 0.85rem;
-    color: #8C6200 !important;
+    color: #D4AF37 !important;
     font-family: var(--font-ui);
     font-weight: 600;
 }
@@ -960,7 +970,7 @@ p {
    ========================================================================== */
 .contact-matrix-card {
     background: #121418 !important;
-    border: 1px solid rgba(218, 165, 32, 0.4) !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
     border-radius: var(--radius-lg);
     padding: 3.5rem 6%;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
@@ -1007,7 +1017,7 @@ p {
 .contact-block-label {
     font-family: var(--font-ui) !important;
     font-size: 0.85rem;
-    color: #F9C03D !important;
+    color: #E5C158 !important;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 700;
@@ -1031,7 +1041,7 @@ p {
 .social-icons-wrapper {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(218, 165, 32, 0.15);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .social-icons {
@@ -1167,7 +1177,7 @@ p {
 
 .cookie-btn-accept:hover {
     background: var(--color-gold-bright);
-    box-shadow: 0 0 15px rgba(249, 192, 61, 0.5);
+    box-shadow: 0 0 15px rgba(229, 193, 88, 0.5);
 }
 
 .cookie-btn-dismiss {
@@ -1434,15 +1444,15 @@ footer {
 
 .card-frosted-silver:hover {
     background: rgba(255, 255, 255, 0.88) !important;
-    border-color: rgba(218, 165, 32, 0.6) !important;
+    border-color: rgba(212, 175, 55, 0.6) !important;
     transform: translateY(-6px) !important;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(218, 165, 32, 0.2) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(212, 175, 55, 0.2) !important;
 }
 
 .card-frosted-silver .card-pillar-tag {
     font-family: var(--font-ui);
     font-size: 0.82rem;
-    color: #8C6200;
+    color: #D4AF37;
     font-weight: 700;
     margin-bottom: 8px;
     letter-spacing: 0.08em;
@@ -1485,9 +1495,9 @@ footer {
 
 .event-card-frosted:hover {
     background: rgba(255, 255, 255, 0.92) !important;
-    border-color: rgba(218, 165, 32, 0.65) !important;
+    border-color: rgba(212, 175, 55, 0.65) !important;
     transform: translateY(-6px) !important;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(218, 165, 32, 0.2) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(212, 175, 55, 0.2) !important;
 }
 
 .event-card-frosted h3 {
@@ -1505,7 +1515,7 @@ footer {
 }
 
 .event-card-frosted .service-card-action {
-    color: #8C6200 !important;
+    color: #D4AF37 !important;
     font-weight: 700 !important;
     font-size: 0.9rem !important;
     display: inline-flex !important;
@@ -1537,7 +1547,7 @@ footer {
     font-weight: 700 !important;
     letter-spacing: 0.04em !important;
     font-size: 0.85rem !important;
-    color: #8C6200 !important;
+    color: #D4AF37 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
     font-weight: 700 !important;
@@ -1560,8 +1570,8 @@ footer {
 }
 
 .form-control:focus {
-    border-color: #DAA520 !important;
-    box-shadow: 0 0 15px rgba(218, 165, 32, 0.3) !important;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
     background: #FFFFFF !important;
 }
 
@@ -1604,7 +1614,7 @@ input[type="date"].form-control {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #DAA520 0%, #F9C03D 100%) !important;
+    background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%) !important;
     color: #000000 !important;
     border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
     display: flex;
@@ -1617,7 +1627,7 @@ input[type="date"].form-control {
     transform: translateY(20px);
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: 1200;
-    box-shadow: 0 8px 25px rgba(218, 165, 32, 0.45), 0 3px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45), 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 .back-to-top.visible {
@@ -1628,7 +1638,7 @@ input[type="date"].form-control {
 
 .back-to-top:hover {
     transform: translateY(-4px) scale(1.08) !important;
-    box-shadow: 0 12px 30px rgba(249, 192, 61, 0.7) !important;
+    box-shadow: 0 12px 30px rgba(229, 193, 88, 0.7) !important;
     color: #000000 !important;
 }
 
@@ -1649,4 +1659,138 @@ input[type="date"].form-control {
         font-size: 0.76rem !important;
         white-space: nowrap !important;
     }
+}
+
+
+/* ==========================================================================
+   ✨ EXECUTIVE AMBIENT AURA & KINETIC REVEAL ENGINE
+   ========================================================================== */
+.hero-fullbleed::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.04) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: luxuryAuraPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes luxuryAuraPulse {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.85; }
+}
+
+.hero-fullbleed-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Scroll-Triggered Reveal Animation Physics */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Staggered Delay Helpers */
+.stagger-1 { transition-delay: 0.08s !important; }
+.stagger-2 { transition-delay: 0.16s !important; }
+.stagger-3 { transition-delay: 0.24s !important; }
+.stagger-4 { transition-delay: 0.32s !important; }
+.stagger-5 { transition-delay: 0.40s !important; }
+
+/* Luxury Specular Shimmer on Cards */
+.service-interactive-card,
+.card-frosted-silver,
+.event-card-frosted {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-interactive-card::after,
+.card-frosted-silver::after,
+.event-card-frosted::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.75s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.service-interactive-card:hover::after,
+.card-frosted-silver:hover::after,
+.event-card-frosted:hover::after {
+    left: 150%;
+}
+
+/* Button Shimmer Animation */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    background: var(--gold-gradient) !important;
+    color: #090A0D !important;
+    font-weight: 800 !important;
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4) !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 32px rgba(212, 175, 55, 0.6) !important;
+}
+
+/* Marquee Ticker Pill Hover Lift */
+.marquee-pill {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.marquee-pill:hover {
+    border-color: var(--gold-bright) !important;
+    background: rgba(212, 175, 55, 0.18) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3) !important;
+}
+
+
+/* Hero Entrance Animation on Page Load */
+.hero-fullbleed-content {
+    position: relative;
+    z-index: 2;
+    animation: heroEntrance 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-generali-badge {
+    animation: badgeFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes badgeFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-4px); }
 }

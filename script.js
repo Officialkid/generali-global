@@ -115,4 +115,49 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // 5. Executive Scroll-Triggered Reveal Animation Engine (IntersectionObserver)
+    const initScrollAnimations = () => {
+        const animatedElements = document.querySelectorAll(
+            '.section-header, .about-silver-content, .about-portrait-silver-wrapper, ' +
+            '.service-interactive-card, .testimonial-card-frosted, .card-frosted-silver, ' +
+            '.event-card-frosted, .contact-matrix-card, .quote-card, .silver-cred-item, .silver-quote-box'
+        );
+
+        animatedElements.forEach((el, index) => {
+            el.classList.add('reveal-on-scroll');
+            // Stagger siblings in grids
+            const parent = el.parentElement;
+            if (parent && (parent.classList.contains('testimonials-grid-silver') || 
+                           parent.classList.contains('services-carousel-track') ||
+                           parent.classList.contains('about-credentials-silver') ||
+                           parent.classList.contains('institute-bottom-grid'))) {
+                const childIndex = Array.from(parent.children).indexOf(el);
+                if (childIndex < 6) {
+                    el.classList.add(`stagger-${(childIndex % 5) + 1}`);
+                }
+            }
+        });
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        animatedElements.forEach(el => revealObserver.observe(el));
+    };
+
+    if ('IntersectionObserver' in window) {
+        initScrollAnimations();
+    } else {
+        // Fallback for older browsers
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
+    }
 });

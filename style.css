@@ -7,11 +7,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
 
 :root {
+    /* Brand Palette */
+    --color-black: #0A0A0C;
+    --color-dark-1: #111215;
+    --color-dark-2: #16181C;
+    --color-dark-3: #20232A;
+    
+    /* Luminous Silver Palette */
+    --color-silver: #E2E6EA;
+    --color-silver-surface: #D5DAE0;
+    --color-silver-light: #F4F6F8;
+    --color-silver-text: #111418;
+    --color-silver-muted: #3D444E;
+    
+    /* Radiant Metallic Gold Accents */
+    --color-gold: #B8860B;
+    --color-gold-light: #DAA520;
+    --color-gold-bright: #F9C03D;
+    --color-gold-transparent: rgba(218, 165, 32, 0.15);
+    --color-hairline: rgba(218, 165, 32, 0.35);
+    --color-hairline-bright: rgba(249, 192, 61, 0.65);
+    
+    /* Social Brand Colors */
+    --color-instagram: #E1306C;
+    --color-tiktok: #010101;
+    --color-linkedin: #0A66C2;
+    --color-youtube: #FF0000;
+    --color-whatsapp: #25D366;
+    
+    /* High-Contrast Luminous Text on Dark Backgrounds */
+    --color-text-light: #FFFFFF;
+    --color-text-body: #F0F3F6;
+    --color-text-muted: #D1D5DB;
+    
     /* Solid Executive Typography — Zero Flimsy Monospace */
     --font-heading: 'Plus Jakarta Sans', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-ui: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
-    --font-mono: 'Montserrat', 'Plus Jakarta Sans', sans-serif; /* Fallback alias to solid sans */
+    --font-mono: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
     
     /* Layout */
     --container-max: 1320px;
@@ -48,6 +81,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.25;
+    color: var(--color-text-light);
 }
 
 p {
@@ -63,9 +97,10 @@ p {
 }
 
 .gold-gradient-text {
-    background: linear-gradient(135deg, var(--color-gold-bright) 0%, #FFFFFF 50%, var(--color-gold-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(135deg, #F9C03D 0%, #FFFFFF 50%, #DAA520 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
 }
 
 .holographic-divider {
@@ -191,31 +226,31 @@ p {
 }
 
 .nav-links a {
-    color: var(--color-text-muted);
+    color: #FFFFFF !important;
     text-decoration: none;
-    font-family: var(--font-ui);
-    font-size: 0.86rem;
+    font-family: var(--font-ui) !important;
+    font-size: 0.92rem !important;
     letter-spacing: 0.03em;
-    padding: 7px 14px;
+    padding: 8px 16px;
     border-radius: var(--radius-full);
     transition: all 0.25s ease;
-    font-weight: 500;
+    font-weight: 700 !important;
     white-space: nowrap;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--color-gold-bright);
-    background: var(--color-gold-transparent);
+    color: #F9C03D !important;
+    background: rgba(218, 165, 32, 0.15) !important;
 }
 
 .nav-cta-btn {
-    background: var(--color-gold-light);
+    background: linear-gradient(135deg, #DAA520 0%, #F9C03D 100%) !important;
     color: #000000 !important;
-    font-weight: 700 !important;
-    padding: 9px 20px !important;
+    font-weight: 800 !important;
+    padding: 10px 22px !important;
     border-radius: var(--radius-full) !important;
-    box-shadow: 0 0 20px rgba(218, 165, 32, 0.35);
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4) !important;
     transition: all 0.3s ease !important;
     white-space: nowrap;
 }
@@ -326,10 +361,10 @@ p {
     padding: 6rem 5% 5rem 5%;
     background-color: #0A0A0C;
     background-image: 
-        linear-gradient(180deg, rgba(10, 10, 12, 0.6) 0%, rgba(10, 10, 12, 0.88) 85%, #0A0A0C 100%),
+        linear-gradient(180deg, rgba(10, 10, 12, 0.32) 0%, rgba(10, 10, 12, 0.65) 80%, #0A0A0C 100%),
         url('images/cooperate.jpg');
     background-size: cover;
-    background-position: center 25%;
+    background-position: center 30%;
     background-repeat: no-repeat;
     z-index: 1;
     width: 100%;
@@ -393,18 +428,18 @@ p {
 }
 
 .btn-primary {
-    background: var(--color-gold-light);
-    color: #000;
+    background: linear-gradient(135deg, #DAA520 0%, #F9C03D 100%) !important;
+    color: #000000 !important;
     text-decoration: none;
-    font-family: var(--font-ui);
-    font-size: 0.92rem;
-    font-weight: 700;
+    font-family: var(--font-ui) !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
     padding: 15px 32px;
     border-radius: var(--radius-sm);
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 0 25px rgba(218, 165, 32, 0.45);
+    box-shadow: 0 4px 20px rgba(218, 165, 32, 0.45);
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
@@ -420,16 +455,16 @@ p {
 }
 
 .btn-secondary {
-    background: rgba(10, 10, 10, 0.6);
+    background: rgba(255, 255, 255, 0.08) !important;
     backdrop-filter: blur(15px);
-    color: var(--color-gold-bright);
+    color: #FFFFFF !important;
     text-decoration: none;
-    font-family: var(--font-ui);
-    font-size: 0.92rem;
-    font-weight: 600;
+    font-family: var(--font-ui) !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
     padding: 15px 32px;
     border-radius: var(--radius-sm);
-    border: 1px solid var(--color-hairline-bright);
+    border: 1.5px solid rgba(249, 192, 61, 0.75) !important;
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -437,6 +472,12 @@ p {
     cursor: pointer;
     text-align: center;
     justify-content: center;
+}
+
+.btn-secondary:hover {
+    background: rgba(249, 192, 61, 0.15) !important;
+    border-color: #F9C03D !important;
+    color: #F9C03D !important;
 }
 
 .btn-secondary:hover {
@@ -449,12 +490,13 @@ p {
 .hero-marquee-container {
     width: 100%;
     overflow: hidden;
-    padding: 1.4rem 0;
-    background: rgba(8, 8, 10, 0.9);
-    border-top: 1px solid var(--color-hairline);
-    border-bottom: 1px solid var(--color-hairline);
+    padding: 1.3rem 0;
+    background: #0E1014;
+    border-top: 1px solid rgba(218, 165, 32, 0.35);
+    border-bottom: 1px solid rgba(218, 165, 32, 0.35);
     position: relative;
     white-space: nowrap;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
 .hero-marquee-track {
@@ -467,22 +509,23 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--color-hairline);
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(218, 165, 32, 0.5) !important;
     padding: 10px 24px;
     border-radius: var(--radius-full);
-    font-family: var(--font-ui);
-    font-size: 0.88rem;
-    color: var(--color-text-body);
+    font-family: var(--font-ui) !important;
+    font-size: 0.9rem !important;
+    color: #FFFFFF !important;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700 !important;
     flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .marquee-pill i {
-    color: var(--color-gold-bright);
-    font-size: 0.9rem;
+    color: #F9C03D !important;
+    font-size: 1rem !important;
 }
 
 @keyframes marqueeScroll {
@@ -495,22 +538,52 @@ p {
    ========================================================================== */
 .section-layered-silver {
     position: relative;
-    background: linear-gradient(180deg, #F0F3F6 0%, #DCE1E7 100%);
-    color: #111418;
+    background: linear-gradient(180deg, #F4F6F9 0%, #E2E6EA 100%) !important;
+    color: #111418 !important;
     padding: 7rem 5%;
     z-index: 10;
-    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.15);
     width: 100%;
+}
+
+.section-layered-silver h2 {
+    color: #0F1216 !important;
+    font-weight: 800;
+}
+
+.section-layered-silver .mono-tag {
+    color: #8C6200 !important;
+    font-weight: 800 !important;
+}
+
+.section-layered-silver .subtitle {
+    color: #353B44 !important;
+    font-size: 1.15rem;
 }
 
 .section-layered-black {
     position: relative;
-    background: #0A0A0C;
-    color: var(--color-text-body);
+    background: #0A0A0C !important;
+    color: #F0F3F6 !important;
     padding: 7rem 5%;
     z-index: 20;
     box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
     width: 100%;
+}
+
+.section-layered-black h2 {
+    color: #FFFFFF !important;
+    font-weight: 800;
+}
+
+.section-layered-black .subtitle {
+    color: #D1D5DB !important;
+    font-size: 1.15rem;
+}
+
+.section-layered-black .mono-tag {
+    color: #F9C03D !important;
+    font-weight: 800 !important;
 }
 
 .section-inner-container {
@@ -747,7 +820,7 @@ p {
 
 .service-card-desc {
     font-size: 0.96rem;
-    color: var(--color-text-muted);
+    color: #E2E8F0 !important;
     line-height: 1.6;
     margin-bottom: 14px;
 }
@@ -886,10 +959,11 @@ p {
    ✨ SECTION 5: GET IN TOUCH
    ========================================================================== */
 .contact-matrix-card {
-    background: var(--color-dark-1);
-    border: 1px solid var(--color-hairline-bright);
+    background: #121418 !important;
+    border: 1px solid rgba(218, 165, 32, 0.4) !important;
     border-radius: var(--radius-lg);
     padding: 3.5rem 6%;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
 }
 
 .contact-matrix-grid-2col {
@@ -931,12 +1005,13 @@ p {
 }
 
 .contact-block-label {
-    font-family: var(--font-ui);
-    font-size: 0.8rem;
-    color: var(--color-gold-bright);
-    letter-spacing: 0.08em;
+    font-family: var(--font-ui) !important;
+    font-size: 0.85rem;
+    color: #F9C03D !important;
     text-transform: uppercase;
-    margin-bottom: 2px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    margin-bottom: 6px;
 }
 
 .contact-block-val a {

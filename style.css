@@ -361,10 +361,10 @@ p {
     padding: 6rem 5% 5rem 5%;
     background-color: #0A0A0C;
     background-image: 
-        linear-gradient(180deg, rgba(10, 10, 12, 0.32) 0%, rgba(10, 10, 12, 0.65) 80%, #0A0A0C 100%),
-        url('images/cooperate.jpg');
+        linear-gradient(180deg, rgba(10, 10, 12, 0.42) 0%, rgba(10, 10, 12, 0.78) 80%, #0A0A0C 100%),
+        url('images/Generali-1.jpg');
     background-size: cover;
-    background-position: center 30%;
+    background-position: center 18%;
     background-repeat: no-repeat;
     z-index: 1;
     width: 100%;
